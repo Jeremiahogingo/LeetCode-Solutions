@@ -1,219 +1,312 @@
-# LeetCode Solutions
+<div align="center">
 
-![LeetCode](https://img.shields.io/badge/LeetCode-000000?style=for-the-badge&logo=LeetCode&logoColor=#d16c06)
+# 🚀 LeetCode Solutions
+
+### Mastering Data Structures & Algorithms • Technical Interview Preparation • Continuous Learning
+
+<p align="center">
+  <a href="https://leetcode.com/u/Jerrylion/">
+    <img src="https://img.shields.io/badge/LeetCode-JerryLion-orange?style=for-the-badge&logo=leetcode" />
+  </a>
+
+  <a href="https://github.com/Jeremiahogingo">
+    <img src="https://img.shields.io/badge/GitHub-Jeremiahogingo-black?style=for-the-badge&logo=github" />
+  </a>
+
+  <a href="https://my-portfolio-eta-six-33.vercel.app/">
+    <img src="https://img.shields.io/badge/Portfolio-Live-success?style=for-the-badge&logo=vercel" />
+  </a>
+</p>
+
+<p>
+
+![GitHub Repo stars](https://img.shields.io/github/stars/Jeremiahogingo/LeetCode-Solutions?style=for-the-badge)
+![GitHub forks](https://img.shields.io/github/forks/Jeremiahogingo/LeetCode-Solutions?style=for-the-badge)
+![GitHub last commit](https://img.shields.io/github/last-commit/Jeremiahogingo/LeetCode-Solutions?style=for-the-badge)
+![GitHub repo size](https://img.shields.io/github/repo-size/Jeremiahogingo/LeetCode-Solutions?style=for-the-badge)
+![License](https://img.shields.io/github/license/Jeremiahogingo/LeetCode-Solutions?style=for-the-badge)
+
+</p>
+
+<p>
+
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white)
-![C++](https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)
+![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
+![C++](https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=cplusplus&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 
-A collection of my solutions to LeetCode problems, organized by topic and difficulty. This repository serves as a personal coding journal and a resource for others preparing for technical interviews.
+</p>
 
-## 📊 Progress Overview
+![Visitor Count](https://komarev.com/ghpvc/?username=Jeremiahogingo&repo=LeetCode-Solutions&style=for-the-badge)
 
-| Difficulty | Solved | Total |
-|------------|--------|-------|
-| Easy | 🔵 | - |
-| Medium | 🟡 | - |
-| Hard | 🔴 | - |
+</div>
 
-**Total Problems Solved:** [![Total Problems](https://img.shields.io/badge/Total-0-blue)]()
+---
 
-## 🗂️ Organization
+# 📖 About
 
-Solutions are organized by topic:
+Welcome!
 
-### Data Structures
-- **Arrays & Hashing**
-- **Linked Lists**
-- **Stacks & Queues**
-- **Trees & Graphs**
-- **Heaps & Priority Queues**
-- **Tries**
+This repository documents my journey through **LeetCode**, where I solve algorithmic and data structure problems to improve my software engineering skills and prepare for technical interviews.
 
-### Algorithms
-- **Two Pointers**
-- **Sliding Window**
-- **Binary Search**
-- **Backtracking**
-- **Dynamic Programming**
-- **Greedy Algorithms**
-- **Graph Algorithms** (BFS, DFS, Dijkstra, etc.)
+Each solution focuses on writing **clean**, **efficient**, and **well-documented** code following best practices.
 
-### Patterns
-- **Top K Elements**
-- **K-way Merge**
-- **Topological Sort**
-- **Monotonic Stack/Queue**
+### Every solution includes
 
-## 📁 Repository Structure
+- ✅ Problem Information
+- ✅ Solution Explanation
+- ✅ Time Complexity
+- ✅ Space Complexity
+- ✅ Optimized Code
+- ✅ Multiple Language Implementations (where applicable)
 
+---
+
+# 📊 Progress Dashboard
+
+| Difficulty | Solved |
+|------------|:------:|
+| 🟢 Easy | 0 |
+| 🟡 Medium | 0 |
+| 🔴 Hard | 0 |
+| **Total** | **0** |
+
+---
+
+# 🏆 LeetCode Profile
+
+[![LeetCode Stats](https://leetcard.jacoblin.cool/Jerrylion?theme=dark&font=baloo&ext=heatmap)](https://leetcode.com/u/Jerrylion/)
+
+---
+
+# 🎯 2026 Goals
+
+- [ ] Solve 300+ Problems
+- [ ] Complete Blind 75
+- [ ] Complete NeetCode 150
+- [ ] Reach Knight Badge
+- [ ] Master Dynamic Programming
+- [ ] Master Graph Algorithms
+- [ ] Solve Weekly Contests Consistently
+
+---
+
+# 🗂 Repository Structure
+
+```
 LeetCode-Solutions/
-├── easy/
-│ ├── arrays/
-│ ├── strings/
-│ └── ...
-├── medium/
-│ ├── dynamic-programming/
-│ ├── trees/
-│ └── ...
-├── hard/
-│ ├── graphs/
-│ ├── system-design/
-│ └── ...
-├── templates/
-│ ├── binary-search.py
-│ ├── bfs-dfs.py
-│ └── ...
-└── notes/
-├── patterns.md
-├── complexity.md
-└── ...
 
+Easy/
+│
+├── Arrays/
+├── Strings/
+├── HashMap/
+├── LinkedLists/
+└── Math/
 
-## 🚀 Quick Start
+Medium/
+│
+├── Trees/
+├── Graphs/
+├── DynamicProgramming/
+├── Greedy/
+└── Backtracking/
 
-### Browse Solutions
-```bash
-# Navigate to a specific problem category
-cd medium/arrays
+Hard/
+│
+├── Graphs/
+├── DP/
+└── SegmentTree/
 
-# View solution files
-ls *.py *.java *.cpp
+Templates/
 
-Run a Solution
+Notes/
 
-# Example for Python solutions
-python solution.py
+README.md
+```
 
-// Example for Java solutions
-javac Solution.java
-java Solution
+---
 
-// Example for C++ solutions
-g++ solution.cpp -o solution
-./solution
+# 📚 Topics Covered
 
-💡 Solution Format
+## Data Structures
 
-Each solution file includes:
+- Arrays
+- Strings
+- Hash Maps
+- Linked Lists
+- Stacks
+- Queues
+- Trees
+- Binary Trees
+- Binary Search Trees
+- Graphs
+- Heaps
+- Tries
+- Union Find
 
+---
+
+## Algorithms
+
+- Binary Search
+- Sliding Window
+- Two Pointers
+- Greedy
+- DFS
+- BFS
+- Dynamic Programming
+- Backtracking
+- Divide & Conquer
+- Topological Sort
+- Dijkstra
+- Floyd-Warshall
+- Minimum Spanning Tree
+
+---
+
+# 📂 Solved Problems
+
+| # | Problem | Difficulty | Topics | Language |
+|---|---------|------------|---------|----------|
+| 1 | Two Sum | 🟢 Easy | Array, HashMap | Java |
+| 21 | Merge Two Sorted Lists | 🟢 Easy | Linked List | Python |
+| 79 | Word Search | 🟡 Medium | Backtracking | Java |
+| 32 | Longest Valid Parentheses | 🔴 Hard | Stack, DP | Python |
+
+> This table grows as I solve more problems.
+
+---
+
+# 💻 Languages Used
+
+- Python 🐍
+- Java ☕
+- C++
+- JavaScript
+
+---
+
+# 📖 Coding Pattern Roadmap
+
+- [x] Arrays
+- [x] Hash Maps
+- [ ] Two Pointers
+- [ ] Sliding Window
+- [ ] Stack
+- [ ] Queue
+- [ ] Linked Lists
+- [ ] Trees
+- [ ] Binary Search
+- [ ] Heap
+- [ ] Graphs
+- [ ] Dynamic Programming
+- [ ] Bit Manipulation
+- [ ] Advanced Graph Algorithms
+
+---
+
+# 📝 Solution Template
+
+```python
 """
-LeetCode Problem: [Problem Number]. [Problem Name]
-Difficulty: [Easy/Medium/Hard]
-Topics: [Topic1, Topic2, ...]
+Problem:
+LeetCode #1 - Two Sum
 
-Problem Statement:
-[Brief problem description]
+Difficulty:
+Easy
+
+Topics:
+Array
+HashMap
 
 Approach:
-[Explanation of solution approach]
+One-pass HashMap
 
-Time Complexity: O()
-Space Complexity: O()
+Time Complexity:
+O(n)
 
-Example:
-Input: [example input]
-Output: [example output]
+Space Complexity:
+O(n)
 """
 
 class Solution:
-    def solveProblem(self, params):
-        # Implementation
-        pass
+    pass
+```
 
-# Test cases
-if __name__ == "__main__":
-    solution = Solution()
-    # Test cases here
-    
-🛠️ Languages Used
+---
 
-    Python - Primary language for most solutions
+# 📚 Study Resources
 
-    Java - Object-oriented approaches
+### Practice Lists
 
-    C++ - Performance-critical solutions
+- Blind 75
+- NeetCode 150
+- Grind 169
+- Top Interview Questions
 
-    JavaScript - Front-end focused problems
+### Books
 
-🔍 Search Solutions
+- Cracking the Coding Interview
+- Elements of Programming Interviews
+- Introduction to Algorithms (CLRS)
 
-Use GitHub's search functionality to find specific problems:
+### Websites
 
-    Search by problem number: #1
+- https://leetcode.com
+- https://neetcode.io
+- https://www.techinterviewhandbook.org
 
-    Search by problem name: "two sum"
+---
 
-    Search by topic: "dynamic programming"
+# 📈 GitHub Activity
 
-📈 Learning Journey
-Study Plan
+[![Ashutosh's github activity graph](https://github-readme-activity-graph.vercel.app/graph?username=Jeremiahogingo&theme=github-dark)](https://github.com/Jeremiahogingo)
 
-    Data Structures Mastery
+---
 
-    Algorithm Patterns
+# 🏅 GitHub Achievements
 
-    System Design Basics
+[![trophy](https://github-profile-trophy.vercel.app/?username=Jeremiahogingo&theme=onedark&column=4)](https://github.com/ryo-ma/github-profile-trophy)
 
-    Advanced Topics
+---
 
-Progress Tracking
+# 🚀 Future Improvements
 
-    Daily problem solving streak
+- Automated README statistics
+- GitHub Actions for updating solved problems
+- Daily LeetCode streak tracker
+- Complexity cheat sheets
+- Common interview patterns notes
+- Contest solutions
 
-    Weekly review of learned concepts
+---
 
-    Monthly progress assessment
+# 🤝 Contributions
 
-🤝 Contributing
+Suggestions, improvements and optimized approaches are always welcome.
 
-While this is primarily a personal repository, I welcome:
+Feel free to fork the repository, open an Issue or submit a Pull Request.
 
-    Suggestions for better approaches
+---
 
-    Bug fixes in existing solutions
+# 📬 Connect
 
-    Additional test cases
+| Platform | Link |
+|----------|------|
+| GitHub | https://github.com/Jeremiahogingo |
+| LeetCode | https://leetcode.com/u/Jerrylion/ |
+| LinkedIn | https://linkedin.com/in/jeremiah-omondi-30540432a |
+| Portfolio | https://my-portfolio-eta-six-33.vercel.app/ |
 
-    Performance improvements
+---
 
-📚 Resources
-Helpful Links
+<div align="center">
 
-    LeetCode Official
+### ⭐ If you found this repository useful, consider giving it a star!
 
-    NeetCode Roadmap
+*"The best way to master algorithms is through consistent practice."*
 
-    Tech Interview Handbook
+**Happy Coding! 🚀**
 
-Recommended Books
-
-    "Cracking the Coding Interview" by Gayle Laakmann McDowell
-
-    "Elements of Programming Interviews" by Adnan Aziz
-
-    "Introduction to Algorithms" by CLRS
-
-⭐ Tips for Success
-
-    Understand before coding - Read the problem carefully
-
-    Multiple approaches - Consider brute force first, then optimize
-
-    Test thoroughly - Edge cases matter
-
-    Time yourself - Simulate interview conditions
-
-    Review regularly - Revisit old problems
-
-📞 Contact
-
-    LeetCode Profile: [Your LeetCode Profile URL]
-
-    GitHub: [Your GitHub Profile URL]
-
-    Email: [Your Email]
-
-    "The only way to learn programming is by writing programs." - Dennis Ritchie
-
-Last updated: $(date)
+</div>
