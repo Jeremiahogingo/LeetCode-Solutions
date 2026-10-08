@@ -77,15 +77,6 @@ Each node is visited once, and the list is reversed in place.
 
 The iterative three-pointer technique reverses a linked list efficiently without creating additional nodes.
 
-## Repository Structure
-
-```text
-LeetCode-Solutions/
-└── Easy/
-    └── Go/
-        └── Reverse_Linked_List/
-            ├── solution.go
-            └── README.md
 ```
 
 ## Reference
