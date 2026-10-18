@@ -114,6 +114,86 @@ The solution relies on the problem constraints: `1 <= n <= 9` and `1 <= k <= n!`
 - **Time Complexity:** \(O(n^2)\) — factorial computation takes \(O(n)\), while removing an element from an `ArrayList` can take \(O(n)\). Repeating this for `n` positions gives \(O(n^2)\).
 - **Auxiliary Space Complexity:** \(O(n)\) — the factorial array, available-number list, and result string require linear space.
 
+## Zero Based Indexing explained — Permutation Sequence:
+ The zero-based indexing conversion is this line:
+
+```
+k--;
+```
+
+It converts `k` from a 1-based position (counting starts at 1) into a 0-based index (counting starts at 0).
+
+## 1. Why is the conversion necessary?
+
+Suppose `n = 3`. The permutations in lexicographical order are:
+
+| `k` (problem position) | Permutation | Zero-based index |
+| ---------------------- | ----------- | ---------------- |
+| 1                      | `123`       | 0                |
+| 2                      | `132`       | 1                |
+| 3                      | `213`       | 2                |
+| 4                      | `231`       | 3                |
+| 5                      | `312`       | 4                |
+| 6                      | `321`       | 5                |
+
+The problem asks for the 1st, 2nd, 3rd, ... permutation, so `k` starts at 1. However, Java lists use indices starting at 0.
+
+Therefore:
+
+\\[ \text{zero-based index}=k-1 \\]
+
+For example, if `k = 4`, the requested permutation is `231`. Its zero-based index is `3`.
+
+## 2. How does this affect the factorial calculation?
+
+Consider `n = 4`, `k = 9`.
+
+There are \\(3! = 6\\) permutations for each possible first digit. After converting `k`:
+
+```
+k--;  // 9 becomes 8
+```
+
+We calculate:
+
+```
+int blockSize = factorial[3];  // 6
+int index = k / blockSize;     // 8 / 6 = 1
+```
+
+The available numbers are `[1, 2, 3, 4]`.
+
+- Index `0` selects `1`.
+- Index `1` selects `2`.
+- Index `2` selects `3`.
+- Index `3` selects `4`.
+
+Since `index = 1`, we select `2` as the first digit.
+
+Next, we calculate the position within that block:
+
+```
+k %= blockSize;  // 8 % 6 = 2
+```
+
+The remaining zero-based position is now `2`, and we continue selecting the remaining digits.
+
+The final result is `"2314"`.
+
+## 3. What if we forget `k--`?
+
+With `k = 9`, the first index would be:
+
+\\[ 9 / 6 = 1 \\]
+
+Java's integer division still gives `1` here, so the first digit happens to be correct. But the remainder would be:
+
+\\[ 9 \bmod 6 = 3 \\]
+
+Instead of `2`, which is the correct zero-based remainder. This can cause later digits to be selected incorrectly or lead to an invalid list index in other cases.
+
+Remember: `k--` is necessary because the problem numbers permutations starting at `1`, while the algorithm uses zero-based list indices and arithmetic.
+
 ## Key Takeaways
 
 - Factorials help count permutations without enumerating them.
@@ -130,5 +210,3 @@ The solution relies on the problem constraints: `1 <= n <= 9` and `1 <= k <= n!`
 - [Permutations II](https://leetcode.com/problems/permutations-ii/)
 
 ---
-
-*Part of my [LeetCode Solutions](https://github.com/Jeremiahogingo/LeetCode-Solutions) repository.*
