@@ -124,17 +124,6 @@ Let \(r\) be the number of rows and \(c\) the number of columns.
 - [195. Tenth Line](https://leetcode.com/problems/tenth-line/)
 - [192. Word Frequency](https://leetcode.com/problems/word-frequency/)
 
-## Repository Structure
-
-```text id="o8p4vc"
-LeetCode-Solutions/
-└── Medium/
-    └── Bash/
-        └── Transpose_File/
-            ├── solution.sh
-            └── README.md
-```
-
 ## References
 
 - [LeetCode #194 — Transpose File](https://leetcode.com/problems/transpose-file/description/)
