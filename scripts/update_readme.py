@@ -22,7 +22,14 @@ from pathlib import Path
 from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
-README_PATH = ROOT / "README.md"
+# GitHub's Linux runner treats filename capitalization as significant. The
+# repository historically used Readme.md, while Windows may preserve that case
+# even when a replacement file is named README.md. Prefer the existing file.
+README_CANDIDATES = ("README.md", "Readme.md", "readme.md")
+README_PATH = next(
+    (ROOT / name for name in README_CANDIDATES if (ROOT / name).is_file()),
+    ROOT / "README.md",
+)
 CATALOG_PATH = ROOT / "data" / "problems.json"
 
 SOURCE_ROOTS = ("Easy", "Medium", "Hard", "Shell", "Databases")
