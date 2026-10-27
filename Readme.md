@@ -59,7 +59,7 @@ Solutions focus on clear reasoning, efficient algorithms, readable implementatio
 | 🟡 Medium | 1 |
 | 🔴 Hard | 1 |
 | **Total unique problems** | **4** |
-| **Problem-language implementations** | **4** |
+| **Problem-language implementations** | **5** |
 <!-- AUTO_STATS:END -->
 
 > This dashboard is generated from the repository's problem catalog and solution-file metadata by `scripts/update_readme.py`.
@@ -141,7 +141,7 @@ LeetCode-Solutions/
 <!-- AUTO_PROBLEMS:START -->
 | # | Problem | Difficulty | Topics | Language(s) |
 |---:|---|---|---|---|
-| 1 | [Two Sum](https://leetcode.com/problems/two-sum/) | 🟢 Easy | Array, Hash Table | Java |
+| 1 | [> 0](https://leetcode.com/problems/0/) | 🟢 Easy | Array, Hash Table | Java, JavaScript |
 | 21 | [Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/) | 🟢 Easy | Linked List | Python |
 | 32 | [Longest Valid Parentheses](https://leetcode.com/problems/longest-valid-parentheses/) | 🔴 Hard | Stack, Dynamic Programming | Python |
 | 79 | [Word Search](https://leetcode.com/problems/word-search/) | 🟡 Medium | Backtracking | Java |
@@ -158,6 +158,7 @@ The list is regenerated automatically. A problem is counted once even if solutio
 |---|---:|
 | Java | 2 |
 | Python | 2 |
+| JavaScript | 1 |
 <!-- AUTO_LANGUAGES:END -->
 
 These counts are derived from the tracked problem-language pairs, not from the number of commits.
