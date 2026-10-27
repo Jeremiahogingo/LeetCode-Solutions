@@ -1,0 +1,53 @@
+name: Update README Statistics
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'Easy/**'
+      - 'Medium/**'
+      - 'Hard/**'
+      - 'Shell/**'
+      - 'Databases/**'
+      - 'data/problems.json'
+      - 'scripts/update_readme.py'
+      - '.github/workflows/update-readme.yml'
+  schedule:
+    - cron: '23 3 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-readme-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: '3.13'
+
+      - name: Regenerate README statistics and solved-problem table
+        run: python scripts/update_readme.py
+
+      - name: Commit README changes
+        run: |
+          if git diff --quiet -- README.md; then
+            echo "README is already up to date."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git commit -m "docs: auto-update solved problems and stats"
+          git push

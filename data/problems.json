@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "title": "Two Sum",
+    "difficulty": "Easy",
+    "topics": ["Array", "Hash Table"],
+    "url": "https://leetcode.com/problems/two-sum/",
+    "languages": ["Java"]
+  },
+  {
+    "id": 21,
+    "title": "Merge Two Sorted Lists",
+    "difficulty": "Easy",
+    "topics": ["Linked List"],
+    "url": "https://leetcode.com/problems/merge-two-sorted-lists/",
+    "languages": ["Python"]
+  },
+  {
+    "id": 79,
+    "title": "Word Search",
+    "difficulty": "Medium",
+    "topics": ["Backtracking"],
+    "url": "https://leetcode.com/problems/word-search/",
+    "languages": ["Java"]
+  },
+  {
+    "id": 32,
+    "title": "Longest Valid Parentheses",
+    "difficulty": "Hard",
+    "topics": ["Stack", "Dynamic Programming"],
+    "url": "https://leetcode.com/problems/longest-valid-parentheses/",
+    "languages": ["Python"]
+  }
+]
