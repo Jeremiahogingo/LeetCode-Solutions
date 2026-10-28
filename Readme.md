@@ -26,7 +26,7 @@
     <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
     <img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java" />
     <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript" />
-    <img src="https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=cplusplus&logoColor=white" alt="C++" />
+    <img src="https://img.shields.io/badge/Golang-00ADD8?style=for-the-badge&logo=go&logoColor=white" alt="Golang" />
   </p>
 
   <img src="https://komarev.com/ghpvc/?username=Jeremiahogingo&repo=LeetCode-Solutions&style=for-the-badge" alt="Repository visitors" />
@@ -55,21 +55,12 @@ Solutions focus on clear reasoning, efficient algorithms, readable implementatio
 <!-- AUTO_STATS:START -->
 | Difficulty | Problems |
 |---|---:|
-<<<<<<< HEAD
-| 🟢 Easy | 2 |
-| 🟡 Medium | 1 |
-| 🔴 Hard | 1 |
-| **Total unique problems** | **4** |
-| **Problem-language implementations** | **4** |
-| **Solution source files scanned** | **0** |
-=======
-| 🟢 Easy | 11 |
-| 🟡 Medium | 14 |
+| 🟢 Easy | 12 |
+| 🟡 Medium | 13 |
 | 🔴 Hard | 13 |
 | **Total unique problems** | **38** |
 | **Problem-language implementations** | **43** |
 | **Solution source files scanned** | **48** |
->>>>>>> 3e0ed4befb1b6219e9edfc1ab090c7b9ec38ef3e
 <!-- AUTO_STATS:END -->
 
 > This dashboard is generated from the repository's problem catalog and solution-file metadata by `scripts/update_readme.py`.
@@ -131,9 +122,10 @@ LeetCode-Solutions/
 ├── .gitignore                    # Ignores Python cache and local environment files
 ├── .github/
 │   └── workflows/
-│       └── update-readme.yml     # Runs the README update workflow
+│       ├── update-readme.yml     # Runs the README update workflow
+│       └── generate-contribution-snake.yml # Generates the activity visual
 ├── LICENSE
-└── README.md
+└── Readme.md
 ```
 
 The updater recursively scans the language folders under each difficulty. Folder names such as `python`, `Python`, `javaScript`, and `JavaScript` are accepted; source-language detection is based on each file's extension. The same difficulty detection also works inside `Shell/` and `Databases/`.
@@ -172,18 +164,20 @@ The updater recursively scans the language folders under each difficulty. Folder
 <!-- AUTO_PROBLEMS:START -->
 | # | Problem | Difficulty | Topics | Language(s) |
 |---:|---|---|---|---|
-<<<<<<< HEAD
-| 1 | [Two Sum](https://leetcode.com/problems/two-sum/) | 🟢 Easy | Array, Hash Table | Java |
-=======
-| 1 | [Two Sum](https://leetcode.com/problems/0/) | 🟡 Medium | Array, Hash Table | Java, JavaScript |
+| 1 | [Two Sum](https://leetcode.com/problems/two-sum/) | 🟢 Easy | Array, Hash Table | Java, JavaScript |
 | 3 | [Merge The Two Halves](https://leetcode.com/problems/merge-the-two-halves/) | 🟡 Medium | — | Go |
->>>>>>> 3e0ed4befb1b6219e9edfc1ab090c7b9ec38ef3e
 | 21 | [Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/) | 🟢 Easy | Linked List | Python |
 | 32 | [Longest Valid Parentheses](https://leetcode.com/problems/longest-valid-parentheses/) | 🔴 Hard | Stack, Dynamic Programming | Python |
 | 79 | [Word Search](https://leetcode.com/problems/word-search/) | 🟡 Medium | Backtracking | Java |
 | — | [Binary Tree Inorder Traversal](https://leetcode.com/problems/binary-tree-inorder-traversal/) | 🟢 Easy | — | Go |
 | — | [Combine Two Tables](https://leetcode.com/problems/combine-two-tables/) | 🟢 Easy | — | SQL |
 | — | [Consecutive Numbers](https://leetcode.com/problems/consecutive-numbers/) | 🟡 Medium | — | SQL |
+
+<details>
+<summary>Show all 30 remaining solutions</summary>
+
+| # | Problem | Difficulty | Topics | Language(s) |
+|---:|---|---|---|---|
 | — | [Container With Most Water](https://leetcode.com/problems/container-with-most-water/) | 🟡 Medium | — | Java, Python |
 | — | [Convert Sorted Listto Binary Search Tree](https://leetcode.com/problems/convert-sorted-listto-binary-search-tree/) | 🟡 Medium | — | Java |
 | — | [Jump Game](https://leetcode.com/problems/jump-game/) | 🟡 Medium | — | Go |
@@ -214,9 +208,11 @@ The updater recursively scans the language folders under each difficulty. Folder
 | — | [Valid Palindrome](https://leetcode.com/problems/valid-palindrome/) | 🟢 Easy | — | Python |
 | — | [Valid Sudoku](https://leetcode.com/problems/valid-sudoku/) | 🟡 Medium | — | Python |
 | — | [Wild Card Matching](https://leetcode.com/problems/wild-card-matching/) | 🔴 Hard | — | Python |
+
+</details>
 <!-- AUTO_PROBLEMS:END -->
 
-The list is regenerated automatically. A problem is counted once even if solutions exist in multiple languages; the language column lists distinct implementations discovered or cataloged for that problem.
+The first 8 solutions are shown by default to keep this README compact. Open the collapsible section below to view all remaining solutions. GitHub strips custom CSS from README files, so a native collapsible section is used instead of a fixed-height scrolling box. A problem is counted once even when it has solutions in multiple languages; the language column lists the discovered implementations.
 
 ---
 
@@ -225,17 +221,12 @@ The list is regenerated automatically. A problem is counted once even if solutio
 <!-- AUTO_LANGUAGES:START -->
 | Language | Tracked problem-language pairs |
 |---|---:|
-<<<<<<< HEAD
-| Java | 2 |
-| Python | 2 |
-=======
 | Python | 15 |
 | Java | 14 |
 | Go | 5 |
 | JavaScript | 5 |
 | SQL | 3 |
 | Bash | 1 |
->>>>>>> 3e0ed4befb1b6219e9edfc1ab090c7b9ec38ef3e
 <!-- AUTO_LANGUAGES:END -->
 
 These counts are derived from the tracked problem-language pairs, not from the number of commits.
@@ -297,7 +288,9 @@ The repository includes a Python generator and a GitHub Actions workflow.
 - **Scheduled refresh:** it runs every Monday at 03:23 UTC.
 - **Manual refresh:** open **Actions → Update README Statistics → Run workflow**.
 - **Generated sections:** difficulty counts, unique-problem total, problem-language implementation total, number of source files scanned, solved-problem table, and language counts.
-- **Safe repeat runs:** it commits only when `README.md` changes.
+- **Compact solved-problem list:** the first 8 rows remain visible; the remaining rows are grouped in a collapsible table.
+- **Contribution visual:** `generate-contribution-snake.yml` refreshes the contribution animation daily and publishes it to the `output` branch.
+- **Safe repeat runs:** the README workflow commits only when the tracked README changes.
 
 ### Run the updater locally
 
@@ -338,16 +331,33 @@ python scripts/update_readme.py
 
 ---
 
-## 📈 GitHub Activity
+## 📈 GitHub Contribution Activity
+
+The contribution snake is generated daily by GitHub Actions from the public contribution graph. The first run creates the `output` branch and publishes the SVG files used below.
 
 <div align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=Jeremiahogingo&theme=github-dark" alt="GitHub contribution activity graph" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Jeremiahogingo/LeetCode-Solutions/output/github-snake-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Jeremiahogingo/LeetCode-Solutions/output/github-snake.svg" />
+    <img src="https://raw.githubusercontent.com/Jeremiahogingo/LeetCode-Solutions/output/github-snake.svg" alt="GitHub contribution activity snake animation" width="100%" />
+  </picture>
+  <p><a href="https://github.com/Jeremiahogingo?tab=overview">View the full GitHub contribution graph</a></p>
 </div>
 
-## 🏅 GitHub Achievements
+---
+
+## 🏅 GitHub Achievements & Milestones
+
+GitHub displays official profile achievements on the profile page linked below. The badges here show live milestones for this repository.
 
 <div align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=Jeremiahogingo&theme=onedark&column=4" alt="GitHub profile trophies" />
+  <a href="https://github.com/Jeremiahogingo">
+    <img src="https://img.shields.io/badge/GitHub_Achievements-View_Profile-181717?style=for-the-badge&logo=github&logoColor=white" alt="View official GitHub profile achievements" />
+  </a>
+  <br />
+  <img src="https://img.shields.io/github/commit-activity/y/Jeremiahogingo/LeetCode-Solutions?style=for-the-badge&label=Yearly%20commits" alt="Yearly repository commits" />
+  <img src="https://img.shields.io/github/stars/Jeremiahogingo/LeetCode-Solutions?style=for-the-badge&label=Repository%20stars" alt="Repository stars" />
+  <img src="https://img.shields.io/github/languages/count/Jeremiahogingo/LeetCode-Solutions?style=for-the-badge&label=Languages" alt="Repository languages" />
 </div>
 
 ---

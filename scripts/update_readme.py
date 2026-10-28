@@ -398,22 +398,45 @@ def build_stats(rows: list[dict[str, Any]], discovered_files: int) -> str:
     ])
 
 
-def build_problem_table(rows: list[dict[str, Any]]) -> str:
-    output = [
+def build_problem_table(rows: list[dict[str, Any]], visible_limit: int = 8) -> str:
+    """Render the first few problems openly and collapse the remaining table.
+
+    GitHub sanitizes custom CSS in README files, so a fixed-height scroll container
+    is not reliable. A native <details> block keeps the README compact while making
+    every remaining solution available on demand.
+    """
+    header = [
         "| # | Problem | Difficulty | Topics | Language(s) |",
         "|---:|---|---|---|---|",
     ]
-    for row in rows:
+
+    def render_row(row: dict[str, Any]) -> str:
         emoji = DIFFICULTY_EMOJI[row["difficulty"]]
         topics = ", ".join(row["topics"])
         languages = ", ".join(row["languages"]) if row["languages"] else "—"
         title = row["title"].replace("[", "\\[").replace("]", "\\]")
         problem_number = row.get("id") if row.get("id") is not None else "—"
-        output.append(
-            f"| {problem_number} | [{title}]({row['url']}) | {emoji} {row['difficulty']} | {topics} | {languages} |"
+        return (
+            f"| {problem_number} | [{title}]({row['url']}) | "
+            f"{emoji} {row['difficulty']} | {topics} | {languages} |"
         )
+
     if not rows:
-        output.append("| — | No problems detected yet | — | Add source files or a metadata header | — |")
+        return "\n".join(header + ["| — | No problems detected yet | — | Add source files or a metadata header | — |"])
+
+    output = header + [render_row(row) for row in rows[:visible_limit]]
+    remaining = rows[visible_limit:]
+    if remaining:
+        output.extend([
+            "",
+            "<details>",
+            f"<summary>Show all {len(remaining)} remaining solutions</summary>",
+            "",
+            *header,
+            *(render_row(row) for row in remaining),
+            "",
+            "</details>",
+        ])
     return "\n".join(output)
 
 
