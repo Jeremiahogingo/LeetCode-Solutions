@@ -55,8 +55,8 @@ Solutions focus on clear reasoning, efficient algorithms, readable implementatio
 <!-- AUTO_STATS:START -->
 | Difficulty | Problems |
 |---|---:|
-| 🟢 Easy | 12 |
-| 🟡 Medium | 13 |
+| 🟢 Easy | 11 |
+| 🟡 Medium | 14 |
 | 🔴 Hard | 13 |
 | **Total unique problems** | **38** |
 | **Problem-language implementations** | **43** |
@@ -164,7 +164,7 @@ The updater recursively scans the language folders under each difficulty. Folder
 <!-- AUTO_PROBLEMS:START -->
 | # | Problem | Difficulty | Topics | Language(s) |
 |---:|---|---|---|---|
-| 1 | [Two Sum](https://leetcode.com/problems/two-sum/) | 🟢 Easy | Array, Hash Table | Java, JavaScript |
+| 1 | [Two Sum](https://leetcode.com/problems/0/) | 🟡 Medium | Array, Hash Table | Java, JavaScript |
 | 3 | [Merge The Two Halves](https://leetcode.com/problems/merge-the-two-halves/) | 🟡 Medium | — | Go |
 | 21 | [Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/) | 🟢 Easy | Linked List | Python |
 | 32 | [Longest Valid Parentheses](https://leetcode.com/problems/longest-valid-parentheses/) | 🔴 Hard | Stack, Dynamic Programming | Python |
