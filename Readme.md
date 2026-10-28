@@ -56,11 +56,11 @@ Solutions focus on clear reasoning, efficient algorithms, readable implementatio
 | Difficulty | Problems |
 |---|---:|
 | 🟢 Easy | 11 |
-| 🟡 Medium | 14 |
+| 🟡 Medium | 17 |
 | 🔴 Hard | 13 |
-| **Total unique problems** | **38** |
-| **Problem-language implementations** | **43** |
-| **Solution source files scanned** | **48** |
+| **Total unique problems** | **41** |
+| **Problem-language implementations** | **46** |
+| **Solution source files scanned** | **51** |
 <!-- AUTO_STATS:END -->
 
 > This dashboard is generated from the repository's problem catalog and solution-file metadata by `scripts/update_readme.py`.
@@ -174,7 +174,7 @@ The updater recursively scans the language folders under each difficulty. Folder
 | — | [Consecutive Numbers](https://leetcode.com/problems/consecutive-numbers/) | 🟡 Medium | — | SQL |
 
 <details>
-<summary>Show all 30 remaining solutions</summary>
+<summary>Show all 33 remaining solutions</summary>
 
 | # | Problem | Difficulty | Topics | Language(s) |
 |---:|---|---|---|---|
@@ -186,11 +186,13 @@ The updater recursively scans the language folders under each difficulty. Folder
 | — | [Longest Common Suffix Queries](https://leetcode.com/problems/longest-common-suffix-queries/) | 🔴 Hard | — | Python |
 | — | [Longest Palindromic Substring](https://leetcode.com/problems/longest-palindromic-substring/) | 🟡 Medium | — | Python |
 | — | [Longest Valid Parenthesis](https://leetcode.com/problems/longest-valid-parenthesis/) | 🔴 Hard | — | Python |
+| — | [Memoize](https://leetcode.com/problems/memoize/) | 🟡 Medium | — | JavaScript |
 | — | [Mergelist](https://leetcode.com/problems/mergelist/) | 🟢 Easy | — | Java |
 | — | [Minimum Path Sum](https://leetcode.com/problems/minimum-path-sum/) | 🟡 Medium | — | Python |
 | — | [Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/) | 🔴 Hard | — | Java |
 | — | [N Queens](https://leetcode.com/problems/n-queens/) | 🔴 Hard | — | Python |
 | — | [N Queens Ii](https://leetcode.com/problems/n-queens-ii/) | 🔴 Hard | — | Python |
+| — | [Nth Highest Salary](https://leetcode.com/problems/nth-highest-salary/) | 🟡 Medium | — | SQL |
 | — | [Palindrome Number](https://leetcode.com/problems/palindrome-number/) | 🟢 Easy | — | Python |
 | — | [Permutation Sequence](https://leetcode.com/problems/permutation-sequence/) | 🔴 Hard | — | Java |
 | — | [Permutations](https://leetcode.com/problems/permutations/) | 🟡 Medium | — | Java |
@@ -205,6 +207,7 @@ The updater recursively scans the language folders under each difficulty. Folder
 | — | [Sqrt(X)](https://leetcode.com/problems/sqrt-x/) | 🟢 Easy | — | Java |
 | — | [Subsets Ii](https://leetcode.com/problems/subsets-ii/) | 🟡 Medium | — | Java |
 | — | [Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/) | 🔴 Hard | — | Java |
+| — | [Unique Paths](https://leetcode.com/problems/unique-paths/) | 🟡 Medium | — | Python |
 | — | [Valid Palindrome](https://leetcode.com/problems/valid-palindrome/) | 🟢 Easy | — | Python |
 | — | [Valid Sudoku](https://leetcode.com/problems/valid-sudoku/) | 🟡 Medium | — | Python |
 | — | [Wild Card Matching](https://leetcode.com/problems/wild-card-matching/) | 🔴 Hard | — | Python |
@@ -221,11 +224,11 @@ The first 8 solutions are shown by default to keep this README compact. Open the
 <!-- AUTO_LANGUAGES:START -->
 | Language | Tracked problem-language pairs |
 |---|---:|
-| Python | 15 |
+| Python | 16 |
 | Java | 14 |
+| JavaScript | 6 |
 | Go | 5 |
-| JavaScript | 5 |
-| SQL | 3 |
+| SQL | 4 |
 | Bash | 1 |
 <!-- AUTO_LANGUAGES:END -->
 
