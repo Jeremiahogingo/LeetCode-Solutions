@@ -59,7 +59,8 @@ Solutions focus on clear reasoning, efficient algorithms, readable implementatio
 | 🟡 Medium | 1 |
 | 🔴 Hard | 1 |
 | **Total unique problems** | **4** |
-| **Problem-language implementations** | **5** |
+| **Problem-language implementations** | **4** |
+| **Solution source files scanned** | **0** |
 <!-- AUTO_STATS:END -->
 
 > This dashboard is generated from the repository's problem catalog and solution-file metadata by `scripts/update_readme.py`.
@@ -91,21 +92,42 @@ Solutions focus on clear reasoning, efficient algorithms, readable implementatio
 
 ```text
 LeetCode-Solutions/
-├── Easy/                         # Easy problems and implementations
-├── Medium/                       # Medium problems and implementations
-├── Hard/                         # Hard problems and implementations
-├── Shell/                        # Shell scripting problems
-├── Databases/                    # SQL/database problems
+├── Databases/
+│   ├── Easy/
+│   ├── Medium/
+│   └── Hard/
+├── Easy/
+│   ├── Golang/
+│   ├── Java/
+│   ├── javaScript/
+│   └── python/
+├── Medium/
+│   ├── Golang/
+│   ├── Java/
+│   ├── JavaScript/
+│   └── Python/
+├── Hard/
+│   ├── Golang/
+│   ├── Java/
+│   ├── JavaScript/
+│   └── Python/
+├── Shell/
+│   ├── Easy/
+│   ├── Medium/
+│   └── Hard/
 ├── data/
-│   └── problems.json             # Seed catalog for existing solutions
+│   └── problems.json             # Metadata for legacy/ambiguous filenames
 ├── scripts/
-│   └── update_readme.py          # Regenerates README tables and statistics
+│   └── update_readme.py          # Discovers solutions and regenerates README sections
+├── .gitignore                    # Ignores Python cache and local environment files
 ├── .github/
 │   └── workflows/
 │       └── update-readme.yml     # Runs the README update workflow
 ├── LICENSE
 └── README.md
 ```
+
+The updater recursively scans the language folders under each difficulty. Folder names such as `python`, `Python`, `javaScript`, and `JavaScript` are accepted; source-language detection is based on each file's extension. The same difficulty detection also works inside `Shell/` and `Databases/`.
 
 ---
 
@@ -141,7 +163,7 @@ LeetCode-Solutions/
 <!-- AUTO_PROBLEMS:START -->
 | # | Problem | Difficulty | Topics | Language(s) |
 |---:|---|---|---|---|
-| 1 | [> 0](https://leetcode.com/problems/0/) | 🟢 Easy | Array, Hash Table | Java, JavaScript |
+| 1 | [Two Sum](https://leetcode.com/problems/two-sum/) | 🟢 Easy | Array, Hash Table | Java |
 | 21 | [Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/) | 🟢 Easy | Linked List | Python |
 | 32 | [Longest Valid Parentheses](https://leetcode.com/problems/longest-valid-parentheses/) | 🔴 Hard | Stack, Dynamic Programming | Python |
 | 79 | [Word Search](https://leetcode.com/problems/word-search/) | 🟡 Medium | Backtracking | Java |
@@ -154,11 +176,10 @@ The list is regenerated automatically. A problem is counted once even if solutio
 ## 💻 Language Statistics
 
 <!-- AUTO_LANGUAGES:START -->
-| Language | Tracked implementations |
+| Language | Tracked problem-language pairs |
 |---|---:|
 | Java | 2 |
 | Python | 2 |
-| JavaScript | 1 |
 <!-- AUTO_LANGUAGES:END -->
 
 These counts are derived from the tracked problem-language pairs, not from the number of commits.
@@ -208,7 +229,7 @@ class Solution:
 // URL: https://leetcode.com/problems/letter-combinations-of-a-phone-number/description/
 ```
 
-A numbered folder or filename such as `Easy/125_Valid_Palindrome.py` also lets the updater infer the problem number and title. Difficulty is inferred from `Easy/`, `Medium/`, or `Hard/`; for `Shell/` and `Databases/`, specify it in the metadata header. Include the metadata header for reliable discovery.
+A numbered filename such as `Easy/python/125_Valid_Palindrome.py` lets the updater infer the problem number and title. A descriptive filename such as `Easy/python/ValidPalindrome.py` is also discovered; when no number is available, the table shows `—` in the number column. Difficulty is inferred case-insensitively from any `Easy/`, `Medium/`, or `Hard/` path segment, including the folders inside `Shell/` and `Databases/`. The dashboard also reports how many source files were scanned. Use the metadata header when filenames are generic (for example, `Solution.java`).
 
 ---
 
@@ -219,7 +240,7 @@ The repository includes a Python generator and a GitHub Actions workflow.
 - **On solution changes:** the workflow runs when files change under `Easy/`, `Medium/`, `Hard/`, `Shell/`, or `Databases/`.
 - **Scheduled refresh:** it runs every Monday at 03:23 UTC.
 - **Manual refresh:** open **Actions → Update README Statistics → Run workflow**.
-- **Generated sections:** difficulty counts, unique-problem total, problem-language implementation total, solved-problem table, and language counts.
+- **Generated sections:** difficulty counts, unique-problem total, problem-language implementation total, number of source files scanned, solved-problem table, and language counts.
 - **Safe repeat runs:** it commits only when `README.md` changes.
 
 ### Run the updater locally
@@ -230,9 +251,9 @@ python scripts/update_readme.py
 
 ### Add a new solution
 
-1. Put the solution in the appropriate difficulty or language folder.
-2. Add the four-line metadata header shown above (include the problem ID, title, difficulty, topics, and URL).
-3. Commit and push the solution. The workflow updates the README automatically.
+1. Put the solution in the appropriate difficulty and language folder.
+2. Give the file a descriptive name (preferably including the LeetCode number, e.g. `125_Valid_Palindrome.py`). For generic names such as `Solution.java`, add the metadata header.
+3. Commit and push the solution. The workflow scans the folder tree, updates the counts/table, and commits the README automatically.
 
 `data/problems.json` provides seed metadata for existing problems whose files do not yet have headers. Edit it when backfilling older solutions that cannot be identified from their filenames or source comments. When using GitHub Actions, ensure repository Actions permissions allow the workflow to write repository contents so it can commit the generated README.
 
