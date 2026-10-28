@@ -55,12 +55,21 @@ Solutions focus on clear reasoning, efficient algorithms, readable implementatio
 <!-- AUTO_STATS:START -->
 | Difficulty | Problems |
 |---|---:|
+<<<<<<< HEAD
 | 🟢 Easy | 2 |
 | 🟡 Medium | 1 |
 | 🔴 Hard | 1 |
 | **Total unique problems** | **4** |
 | **Problem-language implementations** | **4** |
 | **Solution source files scanned** | **0** |
+=======
+| 🟢 Easy | 11 |
+| 🟡 Medium | 14 |
+| 🔴 Hard | 13 |
+| **Total unique problems** | **38** |
+| **Problem-language implementations** | **43** |
+| **Solution source files scanned** | **48** |
+>>>>>>> 3e0ed4befb1b6219e9edfc1ab090c7b9ec38ef3e
 <!-- AUTO_STATS:END -->
 
 > This dashboard is generated from the repository's problem catalog and solution-file metadata by `scripts/update_readme.py`.
@@ -163,10 +172,48 @@ The updater recursively scans the language folders under each difficulty. Folder
 <!-- AUTO_PROBLEMS:START -->
 | # | Problem | Difficulty | Topics | Language(s) |
 |---:|---|---|---|---|
+<<<<<<< HEAD
 | 1 | [Two Sum](https://leetcode.com/problems/two-sum/) | 🟢 Easy | Array, Hash Table | Java |
+=======
+| 1 | [Two Sum](https://leetcode.com/problems/0/) | 🟡 Medium | Array, Hash Table | Java, JavaScript |
+| 3 | [Merge The Two Halves](https://leetcode.com/problems/merge-the-two-halves/) | 🟡 Medium | — | Go |
+>>>>>>> 3e0ed4befb1b6219e9edfc1ab090c7b9ec38ef3e
 | 21 | [Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/) | 🟢 Easy | Linked List | Python |
 | 32 | [Longest Valid Parentheses](https://leetcode.com/problems/longest-valid-parentheses/) | 🔴 Hard | Stack, Dynamic Programming | Python |
 | 79 | [Word Search](https://leetcode.com/problems/word-search/) | 🟡 Medium | Backtracking | Java |
+| — | [Binary Tree Inorder Traversal](https://leetcode.com/problems/binary-tree-inorder-traversal/) | 🟢 Easy | — | Go |
+| — | [Combine Two Tables](https://leetcode.com/problems/combine-two-tables/) | 🟢 Easy | — | SQL |
+| — | [Consecutive Numbers](https://leetcode.com/problems/consecutive-numbers/) | 🟡 Medium | — | SQL |
+| — | [Container With Most Water](https://leetcode.com/problems/container-with-most-water/) | 🟡 Medium | — | Java, Python |
+| — | [Convert Sorted Listto Binary Search Tree](https://leetcode.com/problems/convert-sorted-listto-binary-search-tree/) | 🟡 Medium | — | Java |
+| — | [Jump Game](https://leetcode.com/problems/jump-game/) | 🟡 Medium | — | Go |
+| — | [Last Word](https://leetcode.com/problems/last-word/) | 🟢 Easy | — | Java |
+| — | [Longest Common Prefix](https://leetcode.com/problems/longest-common-prefix/) | 🟢 Easy | — | Python |
+| — | [Longest Common Suffix Queries](https://leetcode.com/problems/longest-common-suffix-queries/) | 🔴 Hard | — | Python |
+| — | [Longest Palindromic Substring](https://leetcode.com/problems/longest-palindromic-substring/) | 🟡 Medium | — | Python |
+| — | [Longest Valid Parenthesis](https://leetcode.com/problems/longest-valid-parenthesis/) | 🔴 Hard | — | Python |
+| — | [Mergelist](https://leetcode.com/problems/mergelist/) | 🟢 Easy | — | Java |
+| — | [Minimum Path Sum](https://leetcode.com/problems/minimum-path-sum/) | 🟡 Medium | — | Python |
+| — | [Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/) | 🔴 Hard | — | Java |
+| — | [N Queens](https://leetcode.com/problems/n-queens/) | 🔴 Hard | — | Python |
+| — | [N Queens Ii](https://leetcode.com/problems/n-queens-ii/) | 🔴 Hard | — | Python |
+| — | [Palindrome Number](https://leetcode.com/problems/palindrome-number/) | 🟢 Easy | — | Python |
+| — | [Permutation Sequence](https://leetcode.com/problems/permutation-sequence/) | 🔴 Hard | — | Java |
+| — | [Permutations](https://leetcode.com/problems/permutations/) | 🟡 Medium | — | Java |
+| — | [Remove Duplicates From Sorted List](https://leetcode.com/problems/remove-duplicates-from-sorted-list/) | 🟢 Easy | — | Java |
+| — | [Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/) | 🟡 Medium | — | Go |
+| — | [Reverse Nodes In K Group](https://leetcode.com/problems/reverse-nodes-in-k-group/) | 🔴 Hard | — | Go |
+| — | [Same Tree](https://leetcode.com/problems/same-tree/) | 🟢 Easy | — | JavaScript |
+| — | [Scramble String](https://leetcode.com/problems/scramble-string/) | 🔴 Hard | — | Python |
+| — | [Set Matrix Zeroes](https://leetcode.com/problems/set-matrix-zeroes/) | 🟡 Medium | — | JavaScript |
+| — | [Soduku Solver](https://leetcode.com/problems/soduku-solver/) | 🔴 Hard | — | JavaScript |
+| — | [Soln](https://leetcode.com/problems/soln/) | 🔴 Hard | — | Bash, Java, JavaScript, SQL |
+| — | [Sqrt(X)](https://leetcode.com/problems/sqrt-x/) | 🟢 Easy | — | Java |
+| — | [Subsets Ii](https://leetcode.com/problems/subsets-ii/) | 🟡 Medium | — | Java |
+| — | [Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/) | 🔴 Hard | — | Java |
+| — | [Valid Palindrome](https://leetcode.com/problems/valid-palindrome/) | 🟢 Easy | — | Python |
+| — | [Valid Sudoku](https://leetcode.com/problems/valid-sudoku/) | 🟡 Medium | — | Python |
+| — | [Wild Card Matching](https://leetcode.com/problems/wild-card-matching/) | 🔴 Hard | — | Python |
 <!-- AUTO_PROBLEMS:END -->
 
 The list is regenerated automatically. A problem is counted once even if solutions exist in multiple languages; the language column lists distinct implementations discovered or cataloged for that problem.
@@ -178,8 +225,17 @@ The list is regenerated automatically. A problem is counted once even if solutio
 <!-- AUTO_LANGUAGES:START -->
 | Language | Tracked problem-language pairs |
 |---|---:|
+<<<<<<< HEAD
 | Java | 2 |
 | Python | 2 |
+=======
+| Python | 15 |
+| Java | 14 |
+| Go | 5 |
+| JavaScript | 5 |
+| SQL | 3 |
+| Bash | 1 |
+>>>>>>> 3e0ed4befb1b6219e9edfc1ab090c7b9ec38ef3e
 <!-- AUTO_LANGUAGES:END -->
 
 These counts are derived from the tracked problem-language pairs, not from the number of commits.
