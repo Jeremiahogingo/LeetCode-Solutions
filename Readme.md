@@ -56,11 +56,11 @@ Solutions focus on clear reasoning, efficient algorithms, readable implementatio
 | Difficulty | Problems |
 |---|---:|
 | 🟢 Easy | 11 |
-| 🟡 Medium | 17 |
+| 🟡 Medium | 19 |
 | 🔴 Hard | 13 |
-| **Total unique problems** | **41** |
-| **Problem-language implementations** | **46** |
-| **Solution source files scanned** | **51** |
+| **Total unique problems** | **43** |
+| **Problem-language implementations** | **48** |
+| **Solution source files scanned** | **53** |
 <!-- AUTO_STATS:END -->
 
 > This dashboard is generated from the repository's problem catalog and solution-file metadata by `scripts/update_readme.py`.
@@ -174,7 +174,7 @@ The updater recursively scans the language folders under each difficulty. Folder
 | — | [Consecutive Numbers](https://leetcode.com/problems/consecutive-numbers/) | 🟡 Medium | — | SQL |
 
 <details>
-<summary>Show all 33 remaining solutions</summary>
+<summary>Show all 35 remaining solutions</summary>
 
 | # | Problem | Difficulty | Topics | Language(s) |
 |---:|---|---|---|---|
@@ -199,6 +199,7 @@ The updater recursively scans the language folders under each difficulty. Folder
 | — | [Remove Duplicates From Sorted List](https://leetcode.com/problems/remove-duplicates-from-sorted-list/) | 🟢 Easy | — | Java |
 | — | [Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/) | 🟡 Medium | — | Go |
 | — | [Reverse Nodes In K Group](https://leetcode.com/problems/reverse-nodes-in-k-group/) | 🔴 Hard | — | Go |
+| — | [Rotate Image](https://leetcode.com/problems/rotate-image/) | 🟡 Medium | — | Go |
 | — | [Same Tree](https://leetcode.com/problems/same-tree/) | 🟢 Easy | — | JavaScript |
 | — | [Scramble String](https://leetcode.com/problems/scramble-string/) | 🔴 Hard | — | Python |
 | — | [Set Matrix Zeroes](https://leetcode.com/problems/set-matrix-zeroes/) | 🟡 Medium | — | JavaScript |
@@ -206,6 +207,7 @@ The updater recursively scans the language folders under each difficulty. Folder
 | — | [Soln](https://leetcode.com/problems/soln/) | 🔴 Hard | — | Bash, Java, JavaScript, SQL |
 | — | [Sqrt(X)](https://leetcode.com/problems/sqrt-x/) | 🟢 Easy | — | Java |
 | — | [Subsets Ii](https://leetcode.com/problems/subsets-ii/) | 🟡 Medium | — | Java |
+| — | [Swap Nodes In Pairs](https://leetcode.com/problems/swap-nodes-in-pairs/) | 🟡 Medium | — | Go |
 | — | [Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/) | 🔴 Hard | — | Java |
 | — | [Unique Paths](https://leetcode.com/problems/unique-paths/) | 🟡 Medium | — | Python |
 | — | [Valid Palindrome](https://leetcode.com/problems/valid-palindrome/) | 🟢 Easy | — | Python |
@@ -226,8 +228,8 @@ The first 8 solutions are shown by default to keep this README compact. Open the
 |---|---:|
 | Python | 16 |
 | Java | 14 |
+| Go | 7 |
 | JavaScript | 6 |
-| Go | 5 |
 | SQL | 4 |
 | Bash | 1 |
 <!-- AUTO_LANGUAGES:END -->
