@@ -55,12 +55,12 @@ Solutions focus on clear reasoning, efficient algorithms, readable implementatio
 <!-- AUTO_STATS:START -->
 | Difficulty | Problems |
 |---|---:|
-| 🟢 Easy | 11 |
-| 🟡 Medium | 19 |
-| 🔴 Hard | 13 |
-| **Total unique problems** | **43** |
-| **Problem-language implementations** | **48** |
-| **Solution source files scanned** | **53** |
+| 🟢 Easy | 12 |
+| 🟡 Medium | 20 |
+| 🔴 Hard | 14 |
+| **Total unique problems** | **46** |
+| **Problem-language implementations** | **51** |
+| **Solution source files scanned** | **56** |
 <!-- AUTO_STATS:END -->
 
 > This dashboard is generated from the repository's problem catalog and solution-file metadata by `scripts/update_readme.py`.
@@ -174,12 +174,13 @@ The updater recursively scans the language folders under each difficulty. Folder
 | — | [Consecutive Numbers](https://leetcode.com/problems/consecutive-numbers/) | 🟡 Medium | — | SQL |
 
 <details>
-<summary>Show all 35 remaining solutions</summary>
+<summary>Show all 38 remaining solutions</summary>
 
 | # | Problem | Difficulty | Topics | Language(s) |
 |---:|---|---|---|---|
 | — | [Container With Most Water](https://leetcode.com/problems/container-with-most-water/) | 🟡 Medium | — | Java, Python |
 | — | [Convert Sorted Listto Binary Search Tree](https://leetcode.com/problems/convert-sorted-listto-binary-search-tree/) | 🟡 Medium | — | Java |
+| — | [Game Play Analysis I](https://leetcode.com/problems/game-play-analysis-i/) | 🟢 Easy | — | SQL |
 | — | [Jump Game](https://leetcode.com/problems/jump-game/) | 🟡 Medium | — | Go |
 | — | [Last Word](https://leetcode.com/problems/last-word/) | 🟢 Easy | — | Java |
 | — | [Longest Common Prefix](https://leetcode.com/problems/longest-common-prefix/) | 🟢 Easy | — | Python |
@@ -203,12 +204,14 @@ The updater recursively scans the language folders under each difficulty. Folder
 | — | [Same Tree](https://leetcode.com/problems/same-tree/) | 🟢 Easy | — | JavaScript |
 | — | [Scramble String](https://leetcode.com/problems/scramble-string/) | 🔴 Hard | — | Python |
 | — | [Set Matrix Zeroes](https://leetcode.com/problems/set-matrix-zeroes/) | 🟡 Medium | — | JavaScript |
+| — | [Shortest Path With Most K Consecutive Identical Characters](https://leetcode.com/problems/shortest-path-with-most-k-consecutive-identical-characters/) | 🟡 Medium | — | Go |
 | — | [Soduku Solver](https://leetcode.com/problems/soduku-solver/) | 🔴 Hard | — | JavaScript |
 | — | [Soln](https://leetcode.com/problems/soln/) | 🔴 Hard | — | Bash, Java, JavaScript, SQL |
 | — | [Sqrt(X)](https://leetcode.com/problems/sqrt-x/) | 🟢 Easy | — | Java |
 | — | [Subsets Ii](https://leetcode.com/problems/subsets-ii/) | 🟡 Medium | — | Java |
 | — | [Swap Nodes In Pairs](https://leetcode.com/problems/swap-nodes-in-pairs/) | 🟡 Medium | — | Go |
 | — | [Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/) | 🔴 Hard | — | Java |
+| — | [Trips&Users](https://leetcode.com/problems/trips-users/) | 🔴 Hard | — | SQL |
 | — | [Unique Paths](https://leetcode.com/problems/unique-paths/) | 🟡 Medium | — | Python |
 | — | [Valid Palindrome](https://leetcode.com/problems/valid-palindrome/) | 🟢 Easy | — | Python |
 | — | [Valid Sudoku](https://leetcode.com/problems/valid-sudoku/) | 🟡 Medium | — | Python |
@@ -228,9 +231,9 @@ The first 8 solutions are shown by default to keep this README compact. Open the
 |---|---:|
 | Python | 16 |
 | Java | 14 |
-| Go | 7 |
+| Go | 8 |
 | JavaScript | 6 |
-| SQL | 4 |
+| SQL | 6 |
 | Bash | 1 |
 <!-- AUTO_LANGUAGES:END -->
 
