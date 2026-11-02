@@ -7,7 +7,7 @@
  */
 
 func reverseKGroup(head *ListNode, k int) *ListNode {
-    // Dummy node helps handle changes to the head.
+    // Dummy node helps handle changes to the head.sh
     dummy := &ListNode{
         Next: head,
     }
