@@ -55,12 +55,12 @@ Solutions focus on clear reasoning, efficient algorithms, readable implementatio
 <!-- AUTO_STATS:START -->
 | Difficulty | Problems |
 |---|---:|
-| 🟢 Easy | 12 |
+| 🟢 Easy | 15 |
 | 🟡 Medium | 20 |
 | 🔴 Hard | 14 |
-| **Total unique problems** | **46** |
-| **Problem-language implementations** | **51** |
-| **Solution source files scanned** | **56** |
+| **Total unique problems** | **49** |
+| **Problem-language implementations** | **54** |
+| **Solution source files scanned** | **59** |
 <!-- AUTO_STATS:END -->
 
 > This dashboard is generated from the repository's problem catalog and solution-file metadata by `scripts/update_readme.py`.
@@ -169,15 +169,18 @@ The updater recursively scans the language folders under each difficulty. Folder
 | 21 | [Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/) | 🟢 Easy | Linked List | Python |
 | 32 | [Longest Valid Parentheses](https://leetcode.com/problems/longest-valid-parentheses/) | 🔴 Hard | Stack, Dynamic Programming | Python |
 | 79 | [Word Search](https://leetcode.com/problems/word-search/) | 🟡 Medium | Backtracking | Java |
-| — | [Binary Tree Inorder Traversal](https://leetcode.com/problems/binary-tree-inorder-traversal/) | 🟢 Easy | — | Go |
-| — | [Combine Two Tables](https://leetcode.com/problems/combine-two-tables/) | 🟢 Easy | — | SQL |
-| — | [Consecutive Numbers](https://leetcode.com/problems/consecutive-numbers/) | 🟡 Medium | — | SQL |
+| 181 | [Employees Earning More Than Their Managers](https://leetcode.com/problems/employees-earning-more-than-their-managers/) | 🟢 Easy | — | SQL |
+| 584 | [Find Customer Referee](https://leetcode.com/problems/find-customer-referee/) | 🟢 Easy | — | SQL |
+| 620 | [Not Boring Movies](https://leetcode.com/problems/not-boring-movies/) | 🟢 Easy | — | SQL |
 
 <details>
-<summary>Show all 38 remaining solutions</summary>
+<summary>Show all 41 remaining solutions</summary>
 
 | # | Problem | Difficulty | Topics | Language(s) |
 |---:|---|---|---|---|
+| — | [Binary Tree Inorder Traversal](https://leetcode.com/problems/binary-tree-inorder-traversal/) | 🟢 Easy | — | Go |
+| — | [Combine Two Tables](https://leetcode.com/problems/combine-two-tables/) | 🟢 Easy | — | SQL |
+| — | [Consecutive Numbers](https://leetcode.com/problems/consecutive-numbers/) | 🟡 Medium | — | SQL |
 | — | [Container With Most Water](https://leetcode.com/problems/container-with-most-water/) | 🟡 Medium | — | Java, Python |
 | — | [Convert Sorted Listto Binary Search Tree](https://leetcode.com/problems/convert-sorted-listto-binary-search-tree/) | 🟡 Medium | — | Java |
 | — | [Game Play Analysis I](https://leetcode.com/problems/game-play-analysis-i/) | 🟢 Easy | — | SQL |
@@ -231,9 +234,9 @@ The first 8 solutions are shown by default to keep this README compact. Open the
 |---|---:|
 | Python | 16 |
 | Java | 14 |
+| SQL | 9 |
 | Go | 8 |
 | JavaScript | 6 |
-| SQL | 6 |
 | Bash | 1 |
 <!-- AUTO_LANGUAGES:END -->
 
