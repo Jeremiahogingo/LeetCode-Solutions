@@ -55,12 +55,12 @@ Solutions focus on clear reasoning, efficient algorithms, readable implementatio
 <!-- AUTO_STATS:START -->
 | Difficulty | Problems |
 |---|---:|
-| 🟢 Easy | 16 |
+| 🟢 Easy | 19 |
 | 🟡 Medium | 21 |
 | 🔴 Hard | 14 |
-| **Total unique problems** | **51** |
-| **Problem-language implementations** | **56** |
-| **Solution source files scanned** | **61** |
+| **Total unique problems** | **54** |
+| **Problem-language implementations** | **59** |
+| **Solution source files scanned** | **64** |
 <!-- AUTO_STATS:END -->
 
 > This dashboard is generated from the repository's problem catalog and solution-file metadata by `scripts/update_readme.py`.
@@ -174,11 +174,14 @@ The updater recursively scans the language folders under each difficulty. Folder
 | 584 | [Find Customer Referee](https://leetcode.com/problems/find-customer-referee/) | 🟢 Easy | — | SQL |
 
 <details>
-<summary>Show all 43 remaining solutions</summary>
+<summary>Show all 46 remaining solutions</summary>
 
 | # | Problem | Difficulty | Topics | Language(s) |
 |---:|---|---|---|---|
+| 586 | [Customer Placing The Largest Number Of Orders](https://leetcode.com/problems/customer-placing-the-largest-number-of-orders/) | 🟢 Easy | — | SQL |
+| 596 | [Classes With At Least 5 Students](https://leetcode.com/problems/classes-with-at-least-5-students/) | 🟢 Easy | — | Python |
 | 620 | [Not Boring Movies](https://leetcode.com/problems/not-boring-movies/) | 🟢 Easy | — | SQL |
+| 1385 | [Find The Distance Value Between Two Arrays](https://leetcode.com/problems/find-the-distance-value-between-two-arrays/) | 🟢 Easy | — | Python |
 | 3736 | [Minimum Moves To Equal Array Elements Iii Py](https://leetcode.com/problems/minimum-moves-to-equal-array-elements-iii-py/) | 🟢 Easy | — | Python |
 | — | [Binary Tree Inorder Traversal](https://leetcode.com/problems/binary-tree-inorder-traversal/) | 🟢 Easy | — | Go |
 | — | [Combine Two Tables](https://leetcode.com/problems/combine-two-tables/) | 🟢 Easy | — | SQL |
@@ -234,9 +237,9 @@ The first 8 solutions are shown by default to keep this README compact. Open the
 <!-- AUTO_LANGUAGES:START -->
 | Language | Tracked problem-language pairs |
 |---|---:|
-| Python | 18 |
+| Python | 20 |
 | Java | 14 |
-| SQL | 9 |
+| SQL | 10 |
 | Go | 8 |
 | JavaScript | 6 |
 | Bash | 1 |
