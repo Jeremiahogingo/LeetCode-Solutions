@@ -55,12 +55,12 @@ Solutions focus on clear reasoning, efficient algorithms, readable implementatio
 <!-- AUTO_STATS:START -->
 | Difficulty | Problems |
 |---|---:|
-| 🟢 Easy | 19 |
-| 🟡 Medium | 22 |
+| 🟢 Easy | 20 |
+| 🟡 Medium | 24 |
 | 🔴 Hard | 15 |
-| **Total unique problems** | **56** |
-| **Problem-language implementations** | **61** |
-| **Solution source files scanned** | **66** |
+| **Total unique problems** | **59** |
+| **Problem-language implementations** | **64** |
+| **Solution source files scanned** | **69** |
 <!-- AUTO_STATS:END -->
 
 > This dashboard is generated from the repository's problem catalog and solution-file metadata by `scripts/update_readme.py`.
@@ -174,7 +174,7 @@ The updater recursively scans the language folders under each difficulty. Folder
 | 462 | [Minimum Moves To Equal Array Elements Ii Py](https://leetcode.com/problems/minimum-moves-to-equal-array-elements-ii-py/) | 🟡 Medium | — | Python |
 
 <details>
-<summary>Show all 48 remaining solutions</summary>
+<summary>Show all 51 remaining solutions</summary>
 
 | # | Problem | Difficulty | Topics | Language(s) |
 |---:|---|---|---|---|
@@ -182,6 +182,9 @@ The updater recursively scans the language folders under each difficulty. Folder
 | 586 | [Customer Placing The Largest Number Of Orders](https://leetcode.com/problems/customer-placing-the-largest-number-of-orders/) | 🟢 Easy | — | SQL |
 | 596 | [Classes With At Least 5 Students](https://leetcode.com/problems/classes-with-at-least-5-students/) | 🟢 Easy | — | Python |
 | 620 | [Not Boring Movies](https://leetcode.com/problems/not-boring-movies/) | 🟢 Easy | — | SQL |
+| 1141 | [User Activity For The Past 30 Days I](https://leetcode.com/problems/user-activity-for-the-past-30-days-i/) | 🟢 Easy | — | SQL |
+| 1193 | [Monthly Transactions I](https://leetcode.com/problems/monthly-transactions-i/) | 🟡 Medium | — | SQL |
+| 1267 | [Count Servers That Communicate](https://leetcode.com/problems/count-servers-that-communicate/) | 🟡 Medium | — | Python |
 | 1385 | [Find The Distance Value Between Two Arrays](https://leetcode.com/problems/find-the-distance-value-between-two-arrays/) | 🟢 Easy | — | Python |
 | 2747 | [Count Zero Request Servers](https://leetcode.com/problems/count-zero-request-servers/) | 🟡 Medium | — | Python |
 | 3736 | [Minimum Moves To Equal Array Elements Iii Py](https://leetcode.com/problems/minimum-moves-to-equal-array-elements-iii-py/) | 🟢 Easy | — | Python |
@@ -239,9 +242,9 @@ The first 8 solutions are shown by default to keep this README compact. Open the
 <!-- AUTO_LANGUAGES:START -->
 | Language | Tracked problem-language pairs |
 |---|---:|
-| Python | 22 |
+| Python | 23 |
 | Java | 14 |
-| SQL | 10 |
+| SQL | 12 |
 | Go | 8 |
 | JavaScript | 6 |
 | Bash | 1 |
