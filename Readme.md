@@ -56,11 +56,11 @@ Solutions focus on clear reasoning, efficient algorithms, readable implementatio
 | Difficulty | Problems |
 |---|---:|
 | 🟢 Easy | 20 |
-| 🟡 Medium | 24 |
-| 🔴 Hard | 15 |
-| **Total unique problems** | **59** |
-| **Problem-language implementations** | **64** |
-| **Solution source files scanned** | **69** |
+| 🟡 Medium | 25 |
+| 🔴 Hard | 16 |
+| **Total unique problems** | **61** |
+| **Problem-language implementations** | **66** |
+| **Solution source files scanned** | **71** |
 <!-- AUTO_STATS:END -->
 
 > This dashboard is generated from the repository's problem catalog and solution-file metadata by `scripts/update_readme.py`.
@@ -169,15 +169,16 @@ The updater recursively scans the language folders under each difficulty. Folder
 | 4 | [Median Of Two Sorted Arrays](https://leetcode.com/problems/median-of-two-sorted-arrays/) | 🔴 Hard | — | Python |
 | 21 | [Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/) | 🟢 Easy | Linked List | Python |
 | 32 | [Longest Valid Parentheses](https://leetcode.com/problems/longest-valid-parentheses/) | 🔴 Hard | Stack, Dynamic Programming | Python |
+| 54 | [Spiral Matrix](https://leetcode.com/problems/spiral-matrix/) | 🟡 Medium | — | JavaScript |
 | 79 | [Word Search](https://leetcode.com/problems/word-search/) | 🟡 Medium | Backtracking | Java |
 | 181 | [Employees Earning More Than Their Managers](https://leetcode.com/problems/employees-earning-more-than-their-managers/) | 🟢 Easy | — | SQL |
-| 462 | [Minimum Moves To Equal Array Elements Ii Py](https://leetcode.com/problems/minimum-moves-to-equal-array-elements-ii-py/) | 🟡 Medium | — | Python |
 
 <details>
-<summary>Show all 51 remaining solutions</summary>
+<summary>Show all 53 remaining solutions</summary>
 
 | # | Problem | Difficulty | Topics | Language(s) |
 |---:|---|---|---|---|
+| 462 | [Minimum Moves To Equal Array Elements Ii Py](https://leetcode.com/problems/minimum-moves-to-equal-array-elements-ii-py/) | 🟡 Medium | — | Python |
 | 584 | [Find Customer Referee](https://leetcode.com/problems/find-customer-referee/) | 🟢 Easy | — | SQL |
 | 586 | [Customer Placing The Largest Number Of Orders](https://leetcode.com/problems/customer-placing-the-largest-number-of-orders/) | 🟢 Easy | — | SQL |
 | 596 | [Classes With At Least 5 Students](https://leetcode.com/problems/classes-with-at-least-5-students/) | 🟢 Easy | — | Python |
@@ -186,6 +187,7 @@ The updater recursively scans the language folders under each difficulty. Folder
 | 1193 | [Monthly Transactions I](https://leetcode.com/problems/monthly-transactions-i/) | 🟡 Medium | — | SQL |
 | 1267 | [Count Servers That Communicate](https://leetcode.com/problems/count-servers-that-communicate/) | 🟡 Medium | — | Python |
 | 1385 | [Find The Distance Value Between Two Arrays](https://leetcode.com/problems/find-the-distance-value-between-two-arrays/) | 🟢 Easy | — | Python |
+| 1606 | [Find Servers That Handled Most Number Of Requests](https://leetcode.com/problems/find-servers-that-handled-most-number-of-requests/) | 🔴 Hard | — | Python |
 | 2747 | [Count Zero Request Servers](https://leetcode.com/problems/count-zero-request-servers/) | 🟡 Medium | — | Python |
 | 3736 | [Minimum Moves To Equal Array Elements Iii Py](https://leetcode.com/problems/minimum-moves-to-equal-array-elements-iii-py/) | 🟢 Easy | — | Python |
 | — | [Binary Tree Inorder Traversal](https://leetcode.com/problems/binary-tree-inorder-traversal/) | 🟢 Easy | — | Go |
@@ -242,11 +244,11 @@ The first 8 solutions are shown by default to keep this README compact. Open the
 <!-- AUTO_LANGUAGES:START -->
 | Language | Tracked problem-language pairs |
 |---|---:|
-| Python | 23 |
+| Python | 24 |
 | Java | 14 |
 | SQL | 12 |
 | Go | 8 |
-| JavaScript | 6 |
+| JavaScript | 7 |
 | Bash | 1 |
 <!-- AUTO_LANGUAGES:END -->
 
