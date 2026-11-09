@@ -56,9 +56,9 @@ Solutions focus on clear reasoning, efficient algorithms, readable implementatio
 | Difficulty | Problems |
 |---|---:|
 | 🟢 Easy | 20 |
-| 🟡 Medium | 25 |
+| 🟡 Medium | 24 |
 | 🔴 Hard | 16 |
-| **Total unique problems** | **61** |
+| **Total unique problems** | **60** |
 | **Problem-language implementations** | **66** |
 | **Solution source files scanned** | **71** |
 <!-- AUTO_STATS:END -->
@@ -166,19 +166,18 @@ The updater recursively scans the language folders under each difficulty. Folder
 |---:|---|---|---|---|
 | 1 | [Two Sum](https://leetcode.com/problems/0/) | 🟡 Medium | Array, Hash Table | Java, JavaScript |
 | 3 | [Merge The Two Halves](https://leetcode.com/problems/merge-the-two-halves/) | 🟡 Medium | — | Go |
-| 4 | [Median Of Two Sorted Arrays](https://leetcode.com/problems/median-of-two-sorted-arrays/) | 🔴 Hard | — | Python |
+| 4 | [Traverse From Bottom To Top Along The Left Column](https://leetcode.com/problems/median-of-two-sorted-arrays/) | 🔴 Hard | — | JavaScript, Python |
 | 21 | [Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/) | 🟢 Easy | Linked List | Python |
 | 32 | [Longest Valid Parentheses](https://leetcode.com/problems/longest-valid-parentheses/) | 🔴 Hard | Stack, Dynamic Programming | Python |
-| 54 | [Spiral Matrix](https://leetcode.com/problems/spiral-matrix/) | 🟡 Medium | — | JavaScript |
 | 79 | [Word Search](https://leetcode.com/problems/word-search/) | 🟡 Medium | Backtracking | Java |
 | 181 | [Employees Earning More Than Their Managers](https://leetcode.com/problems/employees-earning-more-than-their-managers/) | 🟢 Easy | — | SQL |
+| 462 | [Minimum Moves To Equal Array Elements Ii Py](https://leetcode.com/problems/minimum-moves-to-equal-array-elements-ii-py/) | 🟡 Medium | — | Python |
 
 <details>
-<summary>Show all 53 remaining solutions</summary>
+<summary>Show all 52 remaining solutions</summary>
 
 | # | Problem | Difficulty | Topics | Language(s) |
 |---:|---|---|---|---|
-| 462 | [Minimum Moves To Equal Array Elements Ii Py](https://leetcode.com/problems/minimum-moves-to-equal-array-elements-ii-py/) | 🟡 Medium | — | Python |
 | 584 | [Find Customer Referee](https://leetcode.com/problems/find-customer-referee/) | 🟢 Easy | — | SQL |
 | 586 | [Customer Placing The Largest Number Of Orders](https://leetcode.com/problems/customer-placing-the-largest-number-of-orders/) | 🟢 Easy | — | SQL |
 | 596 | [Classes With At Least 5 Students](https://leetcode.com/problems/classes-with-at-least-5-students/) | 🟢 Easy | — | Python |
