@@ -1,306 +1,248 @@
-📄 Complete Professional README.md
-
-You can use the following directly in your repository:
-
 # 289. Game of Life
-
-📄 Complete Professional README.md
-
-You can use the following directly in your repository:
-
-# 289. Game of Life
-
 
 <div align="center">
-
 
 ![LeetCode](https://img.shields.io/badge/LeetCode-289-orange?style=for-the-badge&logo=leetcode)
 ![Difficulty](https://img.shields.io/badge/Difficulty-Medium-yellow?style=for-the-badge)
 ![JavaScript](https://img.shields.io/badge/JavaScript-ES6%2B-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![Algorithm](https://img.shields.io/badge/Technique-In--Place%20Simulation-blue?style=for-the-badge)
+![Technique](https://img.shields.io/badge/Technique-In--Place%20Simulation-blue?style=for-the-badge)
 ![Space](https://img.shields.io/badge/Extra%20Space-O(1)-green?style=for-the-badge)
 
-
-### In-place simulation using state encoding to preserve the original board.
-
+**In-place matrix simulation using state encoding to preserve the original generation.**
 
 </div>
 
+---
+
+## 1. Problem Overview
+
+**[LeetCode 289 – Game of Life](https://leetcode.com/problems/game-of-life/)**
+
+The Game of Life is a cellular automaton devised by mathematician John Conway.
+
+You are given an `m × n` binary matrix called `board`, where:
+
+- `1` represents a live cell.
+- `0` represents a dead cell.
+
+Each cell interacts with its eight neighboring cells. Its state in the next generation depends on the number of currently live neighbors.
+
+### Rules of the Game
+
+The next state of each cell follows four rules:
+
+| Current State | Live Neighbors | Next State | Rule |
+|---|---:|---|---|
+| Alive | Fewer than 2 | Dead | Underpopulation |
+| Alive | 2 or 3 | Alive | Survival |
+| Alive | More than 3 | Dead | Overpopulation |
+| Dead | Exactly 3 | Alive | Reproduction |
+
+All cell transitions must happen **simultaneously**.
+
+### The Main Challenge
+
+Updating cells immediately creates a problem: changing one cell may affect the neighbor count of another cell that has not yet been processed.
+
+The challenge is to calculate the next generation without losing access to the original generation.
+
+The optimal in-place approach solves this by temporarily encoding both the original and next states in the same matrix.
 
 ---
 
+## 2. Core Idea: In-Place State Encoding
 
-## 📖 Overview
+A straightforward solution would create a second matrix to store the next generation.
 
+For an `m × n` matrix, this requires:
 
-This problem is a simulation of **Conway's Game of Life**, where each cell in a two-dimensional board can either be:
+- Time: `O(m × n)`
+- Auxiliary space: `O(m × n)`
 
+Instead, we can reuse the original matrix by introducing two temporary values.
 
-- Alive (`1`)
-- Dead (`0`)
+### State Representation
 
+During the first traversal, a cell can have four possible values:
 
-The next generation of the board depends on the state of each cell and its eight neighboring cells.
+| Value | Original State | Next State | Meaning |
+|---:|---|---|---|
+| `0` | Dead | Dead | Remains dead |
+| `1` | Alive | Alive | Remains alive |
+| `2` | Alive | Dead | Will die |
+| `-1` | Dead | Alive | Will become alive |
 
+The temporary values preserve information about the original generation while recording the next generation.
 
-The main challenge is that all cells must transition to their next state **simultaneously**.
+### Why Use `2`?
 
-
-This means we cannot immediately update a cell while traversing the board because neighboring cells may still need to access its original state.
-
-
-The optimal solution solves this problem **in place** by temporarily encoding both the original and next states inside the existing board.
-
-
----
-
-
-# 💡 Core Idea
-
-
-A straightforward solution would create a second matrix.
-
-
-For every cell:
-
-
-1. Count its live neighbors.
-2. Determine its next state.
-3. Store the result in a new board.
-4. Replace the original board.
-
-
-Although simple, this requires:
-
-
-```text
-O(m × n) extra space
-
-The optimal approach avoids creating another matrix.
-
-Instead, we temporarily store state transitions directly inside the original board.
-
-🧠 State Encoding
-
-During processing, a cell can have one of four states:
-
-Value	Original State	Next State
-0	Dead	Dead
-1	Alive	Alive
-2	Alive	Dead
--1	Dead	Alive
-
-The temporary values allow us to preserve the original state while calculating the next generation.
-
-Why 2?
+```javascript
 2 = Alive → Dead
+```
 
-Even though the cell will eventually die, it was originally alive.
+Although the cell will eventually become dead, it was originally alive.
 
-Therefore, while counting neighbors:
+Therefore, it must still be counted as a live neighbor during the first traversal.
 
-cell === 1 || cell === 2
+### Why Use `-1`?
 
-means the cell was originally alive.
-
-Why -1?
+```javascript
 -1 = Dead → Alive
+```
 
-Even though the cell will eventually become alive, it was originally dead.
+Although the cell will eventually become alive, it was originally dead.
 
-Therefore, it should not be counted as a live neighbor during the first pass.
+It must not be counted as a live neighbor during the first traversal.
 
-⚙️ Algorithm
-Step 1 — Define the Eight Directions
+### Identifying Originally Live Cells
 
-Every cell can have up to eight neighbors:
-
-↖  ↑  ↗
-←  X  →
-↙  ↓  ↘
-
-These directions can be represented as:
-
-const directions = [
-    [-1, -1], [-1, 0], [-1, 1],
-    [0, -1],           [0, 1],
-    [1, -1],  [1, 0],  [1, 1]
-];
-Step 2 — Count Originally Live Neighbors
-
-For each neighboring cell:
-
-if (board[newRow][newCol] === 1 ||
-    board[newRow][newCol] === 2)
-
-count it as alive.
+```javascript
+if (cell === 1 || cell === 2) {
+    liveNeighbors++;
+}
+```
 
 Both values represent cells that were alive in the original generation.
 
-Step 3 — Apply State Transitions
+This is the key to preserving simultaneous updates.
 
-For a live cell:
+---
 
-Live neighbors < 2
-        ↓
-Cell dies
-Live neighbors = 2 or 3
-        ↓
-Cell survives
-Live neighbors > 3
-        ↓
-Cell dies
+## 3. Algorithm
 
-For a dead cell:
+Every cell has up to eight neighbors:
 
-Exactly 3 live neighbors
-        ↓
-Cell becomes alive
-Step 4 — Use Temporary States
+```text
+↖  ↑  ↗
+←  X  →
+↙  ↓  ↘
+```
 
-Instead of immediately converting:
+We use two passes through the matrix.
 
-1 → 0
+### Pass 1: Calculate and Encode Transitions
 
-store:
+**Step 1 — Define the eight directions**
 
-1 → 2
+```javascript
+const directions = [
+    [-1, -1], [-1, 0], [-1, 1],
+    [ 0, -1],           [ 0, 1],
+    [ 1, -1], [ 1, 0],  [ 1, 1]
+];
+```
 
-Instead of immediately converting:
+Each pair represents the row and column offset of a neighboring cell.
 
-0 → 1
+**Step 2 — Count originally live neighbors**
 
-store:
+For every cell:
 
-0 → -1
+1. Visit its eight possible neighbors.
+2. Check whether each neighbor is within the matrix boundaries.
+3. Count neighbors whose values are either `1` or `2`.
 
-This preserves the original generation while processing the board.
+**Step 3 — Apply the Game of Life rules**
 
-Step 5 — Finalize the Board
+For an originally live cell:
 
-After all cells have been processed:
+- Fewer than two live neighbors: mark it `2`.
+- Two or three live neighbors: leave it as `1`.
+- More than three live neighbors: mark it `2`.
 
+For an originally dead cell:
+
+- Exactly three live neighbors: mark it `-1`.
+- Otherwise, leave it as `0`.
+
+These temporary values preserve the original state throughout the first pass.
+
+### Pass 2: Finalize the Next Generation
+
+After every cell has been processed, convert the temporary values:
+
+```text
 2  →  0
 -1 →  1
+```
 
-The board now represents the next generation.
+The matrix now contains the next generation.
 
-🔍 Example
-Input
-[
-    [0, 1, 0],
-    [0, 0, 1],
-    [1, 1, 1],
-    [0, 0, 0]
-]
+---
 
-During the first pass, some cells may temporarily become:
+## 4. JavaScript Solution
 
-[
-    [0, 2, 0],
-    [-1, 0, 1],
-    [1, 1, 1],
-    [0, -1, 0]
-]
-
-Remember:
-
-2  = alive → dead
--1 = dead → alive
-
-After converting temporary states:
-
-[
-    [0, 0, 0],
-    [1, 0, 1],
-    [0, 1, 1],
-    [0, 1, 0]
-]
-🧑‍💻 JavaScript Solution
+```javascript
 /**
  * LeetCode 289 - Game of Life
  *
  * @param {number[][]} board
  * @return {void}
- * Do not return anything, modify board in-place instead.
+ * Modifies the board in-place.
  */
 var gameOfLife = function (board) {
+    if (!board.length || !board[0].length) return;
+
     const rows = board.length;
     const cols = board[0].length;
 
-
-    // All possible directions around a cell
+    // All eight possible neighboring directions.
     const directions = [
         [-1, -1], [-1, 0], [-1, 1],
-        [0, -1],           [0, 1],
-        [1, -1],  [1, 0],  [1, 1]
+        [ 0, -1],           [ 0, 1],
+        [ 1, -1], [ 1, 0],  [ 1, 1]
     ];
 
-
-    // Counts neighbors that were originally alive
+    // Count neighbors that were originally alive.
     function countLiveNeighbors(row, col) {
         let liveNeighbors = 0;
-
 
         for (const [dr, dc] of directions) {
             const newRow = row + dr;
             const newCol = col + dc;
 
-
-            // Ensure the neighbor is inside the board
+            // Ensure the neighboring cell is within bounds.
             if (
                 newRow >= 0 &&
                 newRow < rows &&
                 newCol >= 0 &&
                 newCol < cols
             ) {
-                // 1 = alive and remains alive
-                // 2 = alive but will die
-                if (
-                    board[newRow][newCol] === 1 ||
-                    board[newRow][newCol] === 2
-                ) {
+                const cell = board[newRow][newCol];
+
+                // 1 = originally alive
+                // 2 = originally alive, but will die
+                if (cell === 1 || cell === 2) {
                     liveNeighbors++;
                 }
             }
         }
 
-
         return liveNeighbors;
     }
 
-
-    // First pass: determine transitions
+    // First pass: calculate and encode next-generation states.
     for (let row = 0; row < rows; row++) {
         for (let col = 0; col < cols; col++) {
             const liveNeighbors = countLiveNeighbors(row, col);
 
-
-            // Originally alive
             if (board[row][col] === 1) {
+                // Live cell dies from underpopulation or overpopulation.
                 if (liveNeighbors < 2 || liveNeighbors > 3) {
-                    // Alive -> Dead
                     board[row][col] = 2;
                 }
-            }
-
-
-            // Originally dead
-            else {
+            } else {
+                // Dead cell becomes alive through reproduction.
                 if (liveNeighbors === 3) {
-                    // Dead -> Alive
                     board[row][col] = -1;
                 }
             }
         }
     }
 
-
-    // Second pass: finalize transitions
+    // Second pass: convert temporary states into final states.
     for (let row = 0; row < rows; row++) {
         for (let col = 0; col < cols; col++) {
-
-
             if (board[row][col] === 2) {
                 board[row][col] = 0;
             } else if (board[row][col] === -1) {
@@ -309,763 +251,322 @@ var gameOfLife = function (board) {
         }
     }
 };
-📊 Complexity Analysis
-
-Let:
-
-m = number of rows
-n = number of columns
-
-Each cell checks at most eight neighbors.
-
-Since eight is a constant:
-
-Time Complexity
-O(m × n)
-Space Complexity
-O(1)
-
-No additional matrix or data structure proportional to the board size is created.
-
-🔄 Approach Comparison
-Approach	Time	Extra Space
-Create a new board	O(m × n)	O(m × n)
-Copy and update	O(m × n)	O(m × n)
-In-place state encoding	O(m × n)	O(1)
-
-The in-place approach is optimal in terms of auxiliary space.
-
-⚠️ Common Mistakes
-1. Updating Cells Immediately
-
-This is incorrect:
-
-if (shouldDie) {
-    board[row][col] = 0;
-}
-
-The problem is that future cells may use this updated value when counting their neighbors.
-
-The Game of Life requires all transitions to happen simultaneously.
-
-The solution is:
-
-Original State
-      ↓
-Temporary State
-      ↓
-Final State
-2. Counting Newly Alive Cells
-
-A cell marked:
-
--1
-
-was originally dead.
-
-Even though it will become alive, it must not be counted as a live neighbor during the first pass.
-
-3. Forgetting Cells Marked as 2
-
-A cell marked:
-
-2
-
-was originally alive.
-
-Therefore, it must still be counted as a live neighbor.
-
-if (cell === 1 || cell === 2)
-4. Ignoring Board Boundaries
-
-Cells near the edges have fewer than eight valid neighbors.
-
-Always check:
-
-newRow >= 0 &&
-newRow < rows &&
-newCol >= 0 &&
-newCol < cols
-
-before accessing a neighboring cell.
-
-🚀 Implementation Highlights
-Language: JavaScript ES6+
-Technique: In-place state encoding
-Category: Matrix Simulation
-Traversal: Two-pass matrix traversal
-Time Complexity: O(m × n)
-Extra Space: O(1)
-Key Challenge: Simultaneous state transitions
-🧠 Lessons Learned
-1. Preserve the Original State
-
-When an algorithm requires simultaneous updates, modifying values immediately can destroy information needed later.
-
-A useful strategy is to temporarily encode:
-
-Old State + New State
-
-inside the existing data structure.
-
-2. Input Can Be Used as Temporary Storage
-
-Instead of creating another matrix:
-
-Original Board
-+
-New Board
-
-we reuse the existing board.
-
-This is a common technique in problems that require:
-
-O(1) auxiliary space
-3. Two-Pass Algorithms Are Useful for Simultaneous Updates
-
-A common pattern is:
-
-Pass 1
-Determine and encode transitions
-        ↓
-Pass 2
-Finalize transitions
-
-This pattern appears in many in-place simulation and matrix problems.
-
-4. Temporary Values Can Store State Transitions
-
-Instead of thinking of a cell as having only:
-
-Dead
-Alive
-
-we temporarily expand the possible states:
-
-Dead → Dead
-Alive → Alive
-Alive → Dead
-Dead → Alive
-
-This makes it possible to remember both generations simultaneously.
-
-🎯 Key Pattern
-          ┌────────────────┐
-          │ Original State │
-          └───────┬────────┘
-                  ↓
-          ┌────────────────┐
-          │ Encode Change  │
-          └───────┬────────┘
-                  ↓
-          ┌────────────────┐
-          │ Finalize State │
-          └────────────────┘
-
-When updates must happen simultaneously but extra space is restricted, encode both the old and new states directly inside the input.
-
-🔗 Related Concepts
-Matrix Simulation
-In-Place Algorithms
-State Encoding
-Cellular Automata
-Two-Pass Algorithms
-Space Optimization
-Grid Traversal
-Neighbor Enumeration
-🔗 Related LeetCode Problems
-#	Problem	Difficulty	Main Concept
-73	Set Matrix Zeroes	🟡 Medium	In-Place Markers
-289	Game of Life	🟡 Medium	State Encoding
-48	Rotate Image	🟡 Medium	In-Place Matrix
-54	Spiral Matrix	🟡 Medium	Matrix Traversal
-130	Surrounded Regions	🟡 Medium	Grid Traversal
-200	Number of Islands	🟡 Medium	Matrix + DFS/BFS
-🌍 Follow-Up: What About an Infinite Board?
-
-The standard problem uses a finite 2D array, but the follow-up asks how an effectively infinite board could be handled when live cells reach the boundaries.
-
-A practical approach would be to store only live cells in a sparse data structure, such as a Set or hash-based representation:
-
-Set of live cell coordinates
-
-For example:
-
-"2,3"
-"5,7"
-"10,4"
-
-Instead of storing an enormous grid:
-
-1000000 × 1000000
-
-we only store cells that are actually alive.
-
-This is especially effective when the board is sparse.
-
-📚 Reference
-
-LeetCode — 289. Game of Life
-
-The official problem defines the four transition rules, simultaneous updates, and the in-place follow-up.
-
-📁 Recommended Repository Structure
-LeetCode-Solutions/
-│
-├── medium/
-│   └── matrix/
-│       └── game-of-life/
-│           ├── README.md
-│           └── solution.js
-│
-├── notes/
-│   ├── Patterns.md
-│   ├── Complexity.md
-│   ├── InPlaceAlgorithms.md
-│   └── StateEncoding.md
-│
-└── README.md
-<div align="center">
-🧬 Problem #289
-
-Difficulty: Medium
-Language: JavaScript
-Time Complexity: O(m × n)
-Space Complexity: O(1)
-
-🔑 Pattern
-
-Read Original State → Encode Transition → Finalize State
-
-⭐ Keep solving. Keep learning. Keep improving.
-
-</div> ```
-<div align="center">
-
-
-![LeetCode](https://img.shields.io/badge/LeetCode-289-orange?style=for-the-badge&logo=leetcode)
-![Difficulty](https://img.shields.io/badge/Difficulty-Medium-yellow?style=for-the-badge)
-![JavaScript](https://img.shields.io/badge/JavaScript-ES6%2B-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![Algorithm](https://img.shields.io/badge/Technique-In--Place%20Simulation-blue?style=for-the-badge)
-![Space](https://img.shields.io/badge/Extra%20Space-O(1)-green?style=for-the-badge)
-
-
-### In-place simulation using state encoding to preserve the original board.
-
-
-</div>
-
+```
 
 ---
 
+## 5. Example and Dry Run
 
-## 📖 Overview
+### Example 1
 
+**Input:**
 
-This problem is a simulation of **Conway's Game of Life**, where each cell in a two-dimensional board can either be:
-
-
-- Alive (`1`)
-- Dead (`0`)
-
-
-The next generation of the board depends on the state of each cell and its eight neighboring cells.
-
-
-The main challenge is that all cells must transition to their next state **simultaneously**.
-
-
-This means we cannot immediately update a cell while traversing the board because neighboring cells may still need to access its original state.
-
-
-The optimal solution solves this problem **in place** by temporarily encoding both the original and next states inside the existing board.
-
-
----
-
-
-# 💡 Core Idea
-
-
-A straightforward solution would create a second matrix.
-
-
-For every cell:
-
-
-1. Count its live neighbors.
-2. Determine its next state.
-3. Store the result in a new board.
-4. Replace the original board.
-
-
-Although simple, this requires:
-
-
-```text
-O(m × n) extra space
-
-The optimal approach avoids creating another matrix.
-
-Instead, we temporarily store state transitions directly inside the original board.
-
-🧠 State Encoding
-
-During processing, a cell can have one of four states:
-
-Value	Original State	Next State
-0	Dead	Dead
-1	Alive	Alive
-2	Alive	Dead
--1	Dead	Alive
-
-The temporary values allow us to preserve the original state while calculating the next generation.
-
-Why 2?
-2 = Alive → Dead
-
-Even though the cell will eventually die, it was originally alive.
-
-Therefore, while counting neighbors:
-
-cell === 1 || cell === 2
-
-means the cell was originally alive.
-
-Why -1?
--1 = Dead → Alive
-
-Even though the cell will eventually become alive, it was originally dead.
-
-Therefore, it should not be counted as a live neighbor during the first pass.
-
-⚙️ Algorithm
-Step 1 — Define the Eight Directions
-
-Every cell can have up to eight neighbors:
-
-↖  ↑  ↗
-←  X  →
-↙  ↓  ↘
-
-These directions can be represented as:
-
-const directions = [
-    [-1, -1], [-1, 0], [-1, 1],
-    [0, -1],           [0, 1],
-    [1, -1],  [1, 0],  [1, 1]
-];
-Step 2 — Count Originally Live Neighbors
-
-For each neighboring cell:
-
-if (board[newRow][newCol] === 1 ||
-    board[newRow][newCol] === 2)
-
-count it as alive.
-
-Both values represent cells that were alive in the original generation.
-
-Step 3 — Apply State Transitions
-
-For a live cell:
-
-Live neighbors < 2
-        ↓
-Cell dies
-Live neighbors = 2 or 3
-        ↓
-Cell survives
-Live neighbors > 3
-        ↓
-Cell dies
-
-For a dead cell:
-
-Exactly 3 live neighbors
-        ↓
-Cell becomes alive
-Step 4 — Use Temporary States
-
-Instead of immediately converting:
-
-1 → 0
-
-store:
-
-1 → 2
-
-Instead of immediately converting:
-
-0 → 1
-
-store:
-
-0 → -1
-
-This preserves the original generation while processing the board.
-
-Step 5 — Finalize the Board
-
-After all cells have been processed:
-
-2  →  0
--1 →  1
-
-The board now represents the next generation.
-
-🔍 Example
-Input
-[
+```javascript
+board = [
     [0, 1, 0],
     [0, 0, 1],
     [1, 1, 1],
     [0, 0, 0]
-]
+];
+```
 
-During the first pass, some cells may temporarily become:
+**First Pass: Temporary State Encoding**
 
+After calculating the next state of every cell:
+
+```javascript
 [
-    [0, 2, 0],
+    [0,  2, 0],
     [-1, 0, 1],
-    [1, 1, 1],
+    [1,  1, 1],
     [0, -1, 0]
-]
+];
+```
 
-Remember:
+The temporary values represent:
 
-2  = alive → dead
--1 = dead → alive
+```text
+2  = Alive → Dead
+-1 = Dead  → Alive
+```
 
-After converting temporary states:
+**Second Pass: Finalize the Matrix**
 
+Convert `2` to `0` and `-1` to `1`.
+
+**Output:**
+
+```javascript
 [
     [0, 0, 0],
     [1, 0, 1],
     [0, 1, 1],
     [0, 1, 0]
-]
-🧑‍💻 JavaScript Solution
-/**
- * LeetCode 289 - Game of Life
- *
- * @param {number[][]} board
- * @return {void}
- * Do not return anything, modify board in-place instead.
- */
-var gameOfLife = function (board) {
-    const rows = board.length;
-    const cols = board[0].length;
+];
+```
 
+The final matrix represents the next generation.
 
-    // All possible directions around a cell
-    const directions = [
-        [-1, -1], [-1, 0], [-1, 1],
-        [0, -1],           [0, 1],
-        [1, -1],  [1, 0],  [1, 1]
-    ];
+### Example 2: Isolated Live Cell
 
+**Input:**
 
-    // Counts neighbors that were originally alive
-    function countLiveNeighbors(row, col) {
-        let liveNeighbors = 0;
+```javascript
+board = [
+    [1, 0, 0],
+    [0, 0, 0],
+    [0, 0, 0]
+];
+```
 
+The live cell has zero live neighbors.
 
-        for (const [dr, dc] of directions) {
-            const newRow = row + dr;
-            const newCol = col + dc;
+According to the underpopulation rule, it dies.
 
+**Output:**
 
-            // Ensure the neighbor is inside the board
-            if (
-                newRow >= 0 &&
-                newRow < rows &&
-                newCol >= 0 &&
-                newCol < cols
-            ) {
-                // 1 = alive and remains alive
-                // 2 = alive but will die
-                if (
-                    board[newRow][newCol] === 1 ||
-                    board[newRow][newCol] === 2
-                ) {
-                    liveNeighbors++;
-                }
-            }
-        }
+```javascript
+[
+    [0, 0, 0],
+    [0, 0, 0],
+    [0, 0, 0]
+];
+```
 
+---
 
-        return liveNeighbors;
-    }
-
-
-    // First pass: determine transitions
-    for (let row = 0; row < rows; row++) {
-        for (let col = 0; col < cols; col++) {
-            const liveNeighbors = countLiveNeighbors(row, col);
-
-
-            // Originally alive
-            if (board[row][col] === 1) {
-                if (liveNeighbors < 2 || liveNeighbors > 3) {
-                    // Alive -> Dead
-                    board[row][col] = 2;
-                }
-            }
-
-
-            // Originally dead
-            else {
-                if (liveNeighbors === 3) {
-                    // Dead -> Alive
-                    board[row][col] = -1;
-                }
-            }
-        }
-    }
-
-
-    // Second pass: finalize transitions
-    for (let row = 0; row < rows; row++) {
-        for (let col = 0; col < cols; col++) {
-
-
-            if (board[row][col] === 2) {
-                board[row][col] = 0;
-            } else if (board[row][col] === -1) {
-                board[row][col] = 1;
-            }
-        }
-    }
-};
-📊 Complexity Analysis
+## 6. Complexity Analysis
 
 Let:
 
-m = number of rows
-n = number of columns
+- `m` = number of rows.
+- `n` = number of columns.
 
-Each cell checks at most eight neighbors.
+### Time Complexity
 
-Since eight is a constant:
+\[
+O(m \times n)
+\]
 
-Time Complexity
-O(m × n)
-Space Complexity
+Each cell is visited twice:
+
+1. The first pass examines at most eight neighbors per cell.
+2. The second pass finalizes temporary states.
+
+Since each cell has a fixed maximum of eight neighbors, the total work is proportional to the number of cells.
+
+### Auxiliary Space Complexity
+
+\[
 O(1)
+\]
 
-No additional matrix or data structure proportional to the board size is created.
+The algorithm does not create another matrix or a data structure proportional to the input size.
 
-🔄 Approach Comparison
-Approach	Time	Extra Space
-Create a new board	O(m × n)	O(m × n)
-Copy and update	O(m × n)	O(m × n)
-In-place state encoding	O(m × n)	O(1)
+The directions array contains only eight fixed coordinate pairs, and the neighbor-counting function uses a constant amount of additional memory.
 
-The in-place approach is optimal in terms of auxiliary space.
+### Approach Comparison
 
-⚠️ Common Mistakes
-1. Updating Cells Immediately
+| Approach | Time Complexity | Auxiliary Space |
+|---|---|---|
+| Create a new matrix | O(m × n) | O(m × n) |
+| In-place state encoding | O(m × n) | O(1) |
 
-This is incorrect:
+The in-place approach provides the same time complexity while reducing auxiliary space to constant space.
 
+---
+
+## 7. Common Mistakes
+
+### 1. Updating Cells Immediately
+
+Incorrect:
+
+```javascript
 if (shouldDie) {
     board[row][col] = 0;
 }
+```
 
-The problem is that future cells may use this updated value when counting their neighbors.
+This destroys information that neighboring cells may still need.
 
-The Game of Life requires all transitions to happen simultaneously.
+**Solution:** Use temporary states and finalize the board only after processing every cell.
 
-The solution is:
+### 2. Counting Newly Alive Cells
 
-Original State
-      ↓
-Temporary State
-      ↓
-Final State
-2. Counting Newly Alive Cells
+A cell marked `-1` was originally dead.
 
-A cell marked:
+It must not be counted as a live neighbor during the first pass.
 
--1
+### 3. Forgetting Cells Marked as `2`
 
-was originally dead.
+A cell marked `2` was originally alive.
 
-Even though it will become alive, it must not be counted as a live neighbor during the first pass.
+It must still contribute to the live-neighbor count.
 
-3. Forgetting Cells Marked as 2
+Correct condition:
 
-A cell marked:
+```javascript
+cell === 1 || cell === 2
+```
 
-2
+### 4. Ignoring Matrix Boundaries
 
-was originally alive.
+Cells on the edges and corners have fewer than eight valid neighbors.
 
-Therefore, it must still be counted as a live neighbor.
+Always validate row and column indices before accessing a neighboring cell.
 
-if (cell === 1 || cell === 2)
-4. Ignoring Board Boundaries
-
-Cells near the edges have fewer than eight valid neighbors.
-
-Always check:
-
+```javascript
 newRow >= 0 &&
 newRow < rows &&
 newCol >= 0 &&
 newCol < cols
+```
 
-before accessing a neighboring cell.
+### 5. Using the Wrong Transition Conditions
 
-🚀 Implementation Highlights
-Language: JavaScript ES6+
-Technique: In-place state encoding
-Category: Matrix Simulation
-Traversal: Two-pass matrix traversal
-Time Complexity: O(m × n)
-Extra Space: O(1)
-Key Challenge: Simultaneous state transitions
-🧠 Lessons Learned
-1. Preserve the Original State
+Remember the exact rules:
 
-When an algorithm requires simultaneous updates, modifying values immediately can destroy information needed later.
+- Alive with fewer than two neighbors dies.
+- Alive with two or three neighbors survives.
+- Alive with more than three neighbors dies.
+- Dead with exactly three neighbors becomes alive.
 
-A useful strategy is to temporarily encode:
+---
 
-Old State + New State
+## 8. Implementation Highlights
 
-inside the existing data structure.
+| Property | Implementation |
+|---|---|
+| Problem | LeetCode 289 |
+| Language | JavaScript ES6+ |
+| Category | Matrix Simulation |
+| Technique | In-Place State Encoding |
+| Traversal | Two-Pass Matrix Traversal |
+| Neighbor Evaluation | Eight Directions |
+| Time Complexity | O(m × n) |
+| Auxiliary Space | O(1) |
+| Main Challenge | Simultaneous State Transitions |
 
-2. Input Can Be Used as Temporary Storage
+---
 
-Instead of creating another matrix:
+## 9. Lessons Learned
 
-Original Board
-+
-New Board
+### Preserve Original Information
 
-we reuse the existing board.
+When multiple updates must happen simultaneously, modifying values immediately may destroy information needed by later operations.
 
-This is a common technique in problems that require:
+Temporary state encoding allows both the original and next states to coexist.
 
-O(1) auxiliary space
-3. Two-Pass Algorithms Are Useful for Simultaneous Updates
+### Use Input as Temporary Storage
 
-A common pattern is:
+An existing data structure can sometimes store intermediate information without requiring another matrix.
 
-Pass 1
-Determine and encode transitions
-        ↓
-Pass 2
-Finalize transitions
+This is particularly useful when a problem imposes strict auxiliary-space requirements.
 
-This pattern appears in many in-place simulation and matrix problems.
+### Recognize the Two-Pass Pattern
 
-4. Temporary Values Can Store State Transitions
+A useful general pattern for in-place algorithms is:
 
-Instead of thinking of a cell as having only:
+```text
+Original State
+      ↓
+Calculate Transitions
+      ↓
+Encode Temporary States
+      ↓
+Finalize Changes
+```
 
-Dead
-Alive
+This separates the calculation of changes from the application of those changes.
 
-we temporarily expand the possible states:
+### Expand the State Representation
 
-Dead → Dead
-Alive → Alive
-Alive → Dead
-Dead → Alive
+A binary matrix normally contains two possible values: `0` and `1`.
 
-This makes it possible to remember both generations simultaneously.
+Introducing temporary values allows us to represent four possible transitions without losing the original state.
 
-🎯 Key Pattern
-          ┌────────────────┐
-          │ Original State │
-          └───────┬────────┘
-                  ↓
-          ┌────────────────┐
-          │ Encode Change  │
-          └───────┬────────┘
-                  ↓
-          ┌────────────────┐
-          │ Finalize State │
-          └────────────────┘
+---
 
-When updates must happen simultaneously but extra space is restricted, encode both the old and new states directly inside the input.
+## 10. Generalization: Infinite Game of Life Board
 
-🔗 Related Concepts
-Matrix Simulation
-In-Place Algorithms
-State Encoding
-Cellular Automata
-Two-Pass Algorithms
-Space Optimization
-Grid Traversal
-Neighbor Enumeration
-🔗 Related LeetCode Problems
-#	Problem	Difficulty	Main Concept
-73	Set Matrix Zeroes	🟡 Medium	In-Place Markers
-289	Game of Life	🟡 Medium	State Encoding
-48	Rotate Image	🟡 Medium	In-Place Matrix
-54	Spiral Matrix	🟡 Medium	Matrix Traversal
-130	Surrounded Regions	🟡 Medium	Grid Traversal
-200	Number of Islands	🟡 Medium	Matrix + DFS/BFS
-🌍 Follow-Up: What About an Infinite Board?
+The standard implementation uses a finite two-dimensional matrix.
 
-The standard problem uses a finite 2D array, but the follow-up asks how an effectively infinite board could be handled when live cells reach the boundaries.
+For an effectively infinite board, allocating a large matrix would be inefficient, especially when only a small proportion of cells are alive.
 
-A practical approach would be to store only live cells in a sparse data structure, such as a Set or hash-based representation:
+A better representation is a sparse data structure, such as a JavaScript `Set`, containing the coordinates of live cells.
 
-Set of live cell coordinates
+Example:
 
-For example:
+```javascript
+const liveCells = new Set([
+    "2,3",
+    "5,7",
+    "10,4"
+]);
+```
 
-"2,3"
-"5,7"
-"10,4"
+Instead of representing every possible cell, only live coordinates are stored.
 
-Instead of storing an enormous grid:
+For each generation:
 
-1000000 × 1000000
+1. Visit every currently live cell.
+2. Count its contribution to the eight neighboring positions.
+3. Track neighbor counts for candidate cells.
+4. Apply the Game of Life rules to determine the next set of live coordinates.
 
-we only store cells that are actually alive.
+This approach is more practical for sparse, effectively unbounded boards.
 
-This is especially effective when the board is sparse.
+**Important:** The sparse representation is a different approach. Its memory usage depends on the number of active cells and their neighboring candidate positions; it does not retain the O(1) auxiliary-space property of the finite-board implementation.
 
-📚 Reference
+---
 
-LeetCode — 289. Game of Life
+## 11. Related Concepts
 
-The official problem defines the four transition rules, simultaneous updates, and the in-place follow-up.
+- Matrix Simulation
+- In-Place Algorithms
+- State Encoding
+- Cellular Automata
+- Two-Pass Algorithms
+- Space Optimization
+- Grid Traversal
+- Neighbor Enumeration
 
-📁 Recommended Repository Structure
-LeetCode-Solutions/
-│
-├── medium/
-│   └── matrix/
-│       └── game-of-life/
-│           ├── README.md
-│           └── solution.js
-│
-├── notes/
-│   ├── Patterns.md
-│   ├── Complexity.md
-│   ├── InPlaceAlgorithms.md
-│   └── StateEncoding.md
-│
-└── README.md
+## 12. Related LeetCode Problems
+
+| Problem | Difficulty | Main Concept |
+|---|---|---|
+| [73. Set Matrix Zeroes](https://leetcode.com/problems/set-matrix-zeroes/) | Medium | In-Place Markers |
+| [48. Rotate Image](https://leetcode.com/problems/rotate-image/) | Medium | In-Place Matrix |
+| [54. Spiral Matrix](https://leetcode.com/problems/spiral-matrix/) | Medium | Matrix Traversal |
+| [130. Surrounded Regions](https://leetcode.com/problems/surrounded-regions/) | Medium | Grid Traversal |
+| [200. Number of Islands](https://leetcode.com/problems/number-of-islands/) | Medium | Matrix + DFS/BFS |
+
+---
+
+## 13. References
+
+- [LeetCode – 289. Game of Life](https://leetcode.com/problems/game-of-life/)
+- [Conway's Game of Life – Wikipedia](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life)
+
+---
+
 <div align="center">
-🧬 Problem #289
 
-Difficulty: Medium
-Language: JavaScript
-Time Complexity: O(m × n)
-Space Complexity: O(1)
+### Problem #289 — Game of Life
 
-🔑 Pattern
+**Difficulty:** Medium
 
-Read Original State → Encode Transition → Finalize State
+**Language:** JavaScript
+
+**Time Complexity:** O(m × n)
+
+**Auxiliary Space:** O(1)
+
+**Key Pattern:**
+
+`Read Original State → Encode Transition → Finalize State`
 
 ⭐ Keep solving. Keep learning. Keep improving.
 
-</div> ```
+</div>
