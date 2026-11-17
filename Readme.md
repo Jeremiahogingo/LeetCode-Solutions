@@ -56,11 +56,11 @@ Solutions focus on clear reasoning, efficient algorithms, readable implementatio
 | Difficulty | Problems |
 |---|---:|
 | 🟢 Easy | 22 |
-| 🟡 Medium | 26 |
-| 🔴 Hard | 16 |
-| **Total unique problems** | **64** |
-| **Problem-language implementations** | **70** |
-| **Solution source files scanned** | **75** |
+| 🟡 Medium | 28 |
+| 🔴 Hard | 17 |
+| **Total unique problems** | **67** |
+| **Problem-language implementations** | **73** |
+| **Solution source files scanned** | **78** |
 <!-- AUTO_STATS:END -->
 
 > This dashboard is generated from the repository's problem catalog and solution-file metadata by `scripts/update_readme.py`.
@@ -174,22 +174,25 @@ The updater recursively scans the language folders under each difficulty. Folder
 | 462 | [Minimum Moves To Equal Array Elements Ii Py](https://leetcode.com/problems/minimum-moves-to-equal-array-elements-ii-py/) | 🟡 Medium | — | Python |
 
 <details>
-<summary>Show all 56 remaining solutions</summary>
+<summary>Show all 59 remaining solutions</summary>
 
 | # | Problem | Difficulty | Topics | Language(s) |
 |---:|---|---|---|---|
 | 584 | [Find Customer Referee](https://leetcode.com/problems/find-customer-referee/) | 🟢 Easy | — | SQL |
 | 586 | [Customer Placing The Largest Number Of Orders](https://leetcode.com/problems/customer-placing-the-largest-number-of-orders/) | 🟢 Easy | — | SQL |
 | 596 | [Classes With At Least 5 Students](https://leetcode.com/problems/classes-with-at-least-5-students/) | 🟢 Easy | — | Python |
+| 608 | [Tree Node](https://leetcode.com/problems/tree-node/) | 🟡 Medium | — | SQL |
 | 620 | [Not Boring Movies](https://leetcode.com/problems/not-boring-movies/) | 🟢 Easy | — | SQL |
 | 1045 | [Customers Who Bought All Products](https://leetcode.com/problems/customers-who-bought-all-products/) | 🟡 Medium | — | SQL |
 | 1141 | [User Activity For The Past 30 Days I](https://leetcode.com/problems/user-activity-for-the-past-30-days-i/) | 🟢 Easy | — | SQL |
 | 1193 | [Monthly Transactions I](https://leetcode.com/problems/monthly-transactions-i/) | 🟡 Medium | — | SQL |
 | 1267 | [Count Servers That Communicate](https://leetcode.com/problems/count-servers-that-communicate/) | 🟡 Medium | — | Python |
 | 1280 | [Students And Examinations](https://leetcode.com/problems/students-and-examinations/) | 🟢 Easy | — | SQL |
+| 1341 | [Movie Rating](https://leetcode.com/problems/movie-rating/) | 🟡 Medium | — | SQL |
 | 1385 | [Find The Distance Value Between Two Arrays](https://leetcode.com/problems/find-the-distance-value-between-two-arrays/) | 🟢 Easy | — | Python |
 | 1606 | [Find Servers That Handled Most Number Of Requests](https://leetcode.com/problems/find-servers-that-handled-most-number-of-requests/) | 🔴 Hard | — | Python |
 | 2747 | [Count Zero Request Servers](https://leetcode.com/problems/count-zero-request-servers/) | 🟡 Medium | — | Python |
+| 2911 | [Minimum Changes To Make K Semi Palindromes](https://leetcode.com/problems/minimum-changes-to-make-k-semi-palindromes/) | 🔴 Hard | — | JavaScript |
 | 3105 | [Longest Strictly Increasing Or Strictly Decreasing Subarray](https://leetcode.com/problems/longest-strictly-increasing-or-strictly-decreasing-subarray/) | 🟢 Easy | — | JavaScript |
 | 3736 | [Minimum Moves To Equal Array Elements Iii Py](https://leetcode.com/problems/minimum-moves-to-equal-array-elements-iii-py/) | 🟢 Easy | — | Python |
 | 3789 | [Minimum Cost To Acquire Required Items](https://leetcode.com/problems/minimum-cost-to-acquire-required-items/) | 🟡 Medium | — | JavaScript |
@@ -248,9 +251,9 @@ The first 8 solutions are shown by default to keep this README compact. Open the
 | Language | Tracked problem-language pairs |
 |---|---:|
 | Python | 24 |
+| SQL | 16 |
 | Java | 14 |
-| SQL | 14 |
-| JavaScript | 9 |
+| JavaScript | 10 |
 | Go | 8 |
 | Bash | 1 |
 <!-- AUTO_LANGUAGES:END -->
