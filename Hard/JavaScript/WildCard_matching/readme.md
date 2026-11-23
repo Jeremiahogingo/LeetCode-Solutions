@@ -1,116 +1,339 @@
-🔍 Problem Description
+# 44. Wildcard Matching
 
-    You are given:
+![Difficulty](https://img.shields.io/badge/Difficulty-Hard-red)
+![Language](https://img.shields.io/badge/Language-JavaScript-yellow)
+![Approach](https://img.shields.io/badge/Approach-Dynamic_Programming-blue)
+![Time Complexity](https://img.shields.io/badge/Time-O(m%C3%97n)-brightgreen)
+![Space Complexity](https://img.shields.io/badge/Space-O(n)-brightgreen)
 
-    A string s
+## Problem
 
-    A pattern p
+**LeetCode:** [44. Wildcard Matching](https://leetcode.com/problems/wildcard-matching/)
 
-    Your task: return true if the entire string s matches the pattern p, else return false.
+**Difficulty:** Hard
 
-    The pattern may contain two special wildcard characters:
+**Language:** JavaScript
 
-    ? — Matches exactly one character (any single character). 
-    Design Gurus
-    +1
+Given an input string `s` and a pattern `p`, implement wildcard pattern matching with support for two special characters:
 
-    * — Matches any sequence of characters (including the empty sequence) 
-    AlgoMonster
-    +1
+- `?` — Matches exactly one character.
+- `*` — Matches any sequence of characters, including an empty sequence.
 
-    Important: the match must cover the whole string s (not just a substring). 
-    SparkCodehub
+All other characters must match literally.
 
-    📌 Example Cases
+The pattern must match the **entire input string**, not just a substring.
 
-    s = "aa", p = "a" → false (pattern too short) 
-    SparkCodehub
-    +1
+Return `true` if the pattern matches the input string; otherwise, return `false`.
 
-    s = "aa", p = "*" → true (* can match "aa") 
-    GeeksforGeeks
+## Approach: Dynamic Programming with Space Optimization
 
-    s = "cb", p = "?a" → false (? matches c, but a doesn’t match b) 
-    Design Gurus
+We use dynamic programming to determine whether prefixes of the input string match prefixes of the pattern.
 
-    s = "adceb", p = "*a*b" → true (for example * → "adce", then a, then * → "", then b) 
-    AlgoMonster
-    +1
+Instead of maintaining a two-dimensional DP table, we optimize the solution to use a one-dimensional array.
 
-🛠 Why It’s Challenging
+### DP State
 
-    The * wildcard means you may need to match zero, one, or many characters — this often leads to many possible ways of matching, making naive recursion exponential. 
-    AlgoMonster
-    +1
+Let:
 
-    You need to consider the entire string and entire pattern, including leftover characters in either.
+`dp[j]` represent whether the currently processed prefix of `s` matches the first `j` characters of `p`.
 
-    Edge cases like an empty string, pattern consisting only of *, or many consecutive *s need careful handling.
+Initially:
 
-🚀 Common Solution Approaches
-    1. Recursion + Memoization (Top-Down)
+```javascript
+dp[0] = true;
+```
 
-        Define match(i, j) meaning: does s[i:] match p[j:]?
+This represents the fact that two empty strings match.
 
-        Base cases:
+### State Transitions
 
-        If j == len(p), match only if i == len(s).
+There are three possible cases.
 
-        If i == len(s), then the remainder p[j:] must all be *s to match. 
-        Design Gurus
+**1. Normal character**
 
-        Recurrence:
+If the current pattern character matches the current string character:
 
-        If p[j] is a regular character or ?: check if i < len(s) and (p[j] == s[i] or p[j] == '?'), then recurse match(i+1, j+1).
+```text
+dp[i][j] = dp[i-1][j-1]
+```
 
-        If p[j] is *: two possibilities:
+Both characters must match, and the preceding prefixes must also match.
 
-        * matches zero chars → match(i, j+1)
+**2. Question mark (`?`)**
 
-        * matches one or more chars → match(i+1, j)
+The `?` wildcard matches exactly one character:
 
-        Memoize (i, j) so you don’t recompute. Time ≈ O(m * n) where m = len(s), n = len(p). 
-        AlgoMonster
-        +1
+```text
+dp[i][j] = dp[i-1][j-1]
+```
 
-    2. Dynamic Programming (Bottom-Up)
+The same diagonal transition applies because `?` consumes one character.
 
-        Create a 2D boolean table dp[i][j] meaning: whether s[:i] (first i chars) matches p[:j]. 
-        Design Gurus
-        +1
+**3. Asterisk (`*`)**
 
-        Dimensions: (m+1) × (n+1) (include empty prefixes)
+The `*` wildcard can match an empty sequence or consume another character:
 
-        Initialization:
+```text
+dp[i][j] = dp[i][j-1] OR dp[i-1][j]
+```
 
-        dp[0][0] = true: empty string matches empty pattern.
+- `dp[i][j-1]`: The `*` matches an empty sequence.
+- `dp[i-1][j]`: The `*` consumes one additional character.
 
-        For j>0, dp[0][j] = dp[0][j-1] and p[j-1] == '*' (because only * can match empty string) 
-        SparkCodehub
+### JavaScript Solution
 
-        Filling rule: for i=1..m, j=1..n:
+**File:** `44_Wildcard_Matching.js`
 
-        If p[j-1] is a letter or ?:
-        dp[i][j] = dp[i-1][j-1] and (p[j-1] == s[i-1] or p[j-1] == '?')
+```javascript
+/**
+ * LeetCode 44 - Wildcard Matching
+ *
+ * @param {string} s
+ * @param {string} p
+ * @return {boolean}
+ */
+var isMatch = function(s, p) {
+    const m = s.length;
+    const n = p.length;
 
-        Else if p[j-1] == '*':
-        dp[i][j] = dp[i][j-1] (treat * as empty) or dp[i-1][j] (treat * as matching one more char) 
-        AlgoMonster
-        +1
+    // dp[j] indicates whether the current prefix of s
+    // matches the first j characters of p.
+    const dp = Array(n + 1).fill(false);
 
-        The answer is dp[m][n].
+    // Two empty strings match.
+    dp[0] = true;
 
-        Time complexity: O(m * n), space: O(m * n) (can be optimized to O(n)).
+    // Leading '*' characters can match an empty string.
+    for (let j = 1; j <= n; j++) {
+        if (p[j - 1] === '*') {
+            dp[j] = dp[j - 1];
+        } else {
+            break;
+        }
+    }
 
-        ✅ What to Watch Out For
+    // Process each character in s.
+    for (let i = 1; i <= m; i++) {
+        // Previous row's first column is always false.
+        let diagonal = dp[0];
+        dp[0] = false;
 
-            Case when s is empty but p has only *s → should return true.
+        for (let j = 1; j <= n; j++) {
+            // Preserve the previous row's value.
+            const previous = dp[j];
 
-            Case when p is empty but s is non-empty → false.
+            if (p[j - 1] === '*') {
+                // '*' matches an empty sequence or
+                // consumes one additional character.
+                dp[j] = dp[j - 1] || previous;
+            } else {
+                // '?' matches any single character.
+                // Normal characters must match exactly.
+                dp[j] =
+                    diagonal &&
+                    (p[j - 1] === '?' || p[j - 1] === s[i - 1]);
+            }
 
-            Many consecutive *s behave the same as one * (you can simplify pattern by collapsing *** → * but not strictly required). 
-            Design Gurus
+            // Preserve the previous diagonal for the next cell.
+            diagonal = previous;
+        }
+    }
 
-            Off-by-one errors when indexing DP table.
+    return dp[n];
+};
+```
 
-            Pattern matching must be complete, not partial.
+## Example Walkthroughs
+
+### Example 1
+
+**Input:**
+
+```text
+s = "aa"
+p = "a"
+```
+
+**Output:**
+
+```text
+false
+```
+
+**Explanation:**
+
+The pattern contains only one character, while the input contains two. Without `*`, the pattern cannot match the entire string.
+
+### Example 2
+
+**Input:**
+
+```text
+s = "aa"
+p = "*"
+```
+
+**Output:**
+
+```text
+true
+```
+
+**Explanation:**
+
+The `*` wildcard can match the entire input string.
+
+### Example 3
+
+**Input:**
+
+```text
+s = "cb"
+p = "?a"
+```
+
+**Output:**
+
+```text
+false
+```
+
+**Explanation:**
+
+- `?` matches `c`.
+- `a` does not match `b`.
+
+### Example 4
+
+**Input:**
+
+```text
+s = "adceb"
+p = "*a*b"
+```
+
+**Output:**
+
+```text
+true
+```
+
+**Explanation:**
+
+One valid interpretation is:
+
+| Pattern character | Matched sequence |
+|---|---|
+| `*` | Empty string |
+| `a` | `a` |
+| `*` | `dce` |
+| `b` | `b` |
+
+The entire input string is successfully matched.
+
+### Example 5
+
+**Input:**
+
+```text
+s = "acdcb"
+p = "a*c?b"
+```
+
+**Output:**
+
+```text
+false
+```
+
+**Explanation:**
+
+No valid assignment of characters to `*` allows the remaining pattern to match the entire input string.
+
+## Space Optimization
+
+A conventional dynamic programming solution uses a two-dimensional table:
+
+```text
+dp[m + 1][n + 1]
+```
+
+This requires `O(m × n)` auxiliary space.
+
+However, each state depends only on:
+
+- The previous row's same column.
+- The current row's previous column.
+- The previous row's previous column.
+
+These values can be preserved using:
+
+- A one-dimensional DP array.
+- A `diagonal` variable.
+- A temporary `previous` variable.
+
+This reduces auxiliary space to `O(n)` without changing the time complexity.
+
+## Complexity Analysis
+
+Let:
+
+- `m` = length of the input string `s`.
+- `n` = length of the pattern `p`.
+
+| Complexity | Value | Explanation |
+|---|---|---|
+| Time | `O(m × n)` | Every DP state is processed once. |
+| Auxiliary Space | `O(n)` | Only one DP array of size `n + 1` is maintained. |
+
+## Edge Cases
+
+| Input string | Pattern | Expected output |
+|---|---|---|
+| `""` | `""` | `true` |
+| `""` | `"*"` | `true` |
+| `""` | `"?"` | `false` |
+| `"abc"` | `"***"` | `true` |
+| `"abc"` | `"a*c"` | `true` |
+| `"abc"` | `"a*d"` | `false` |
+| `"abc"` | `"???"` | `true` |
+| `"abc"` | `"??"` | `false` |
+
+## Key Takeaways
+
+1. **Dynamic Programming:** Useful when matching decisions create multiple possible paths.
+2. **Wildcard `?`:** Consumes exactly one character.
+3. **Wildcard `*`:** Can consume zero or more characters.
+4. **State transitions:** A wildcard's behavior determines which previous DP states are combined.
+5. **Space optimization:** A two-dimensional DP table can be compressed when transitions depend only on adjacent rows.
+6. **Diagonal tracking:** Preserves the previous row's previous-column state during in-place updates.
+7. **Full-string matching:** Both the input and pattern must be completely matched.
+
+## Repository Structure
+
+```text
+LeetCode-Solutions/
+└── Hard/
+    └── JavaScript/
+        └── 44_Wildcard_Matching.js
+```
+
+## References
+
+- [LeetCode 44 — Wildcard Matching](https://leetcode.com/problems/wildcard-matching/)
+- [Dynamic Programming](https://en.wikipedia.org/wiki/Dynamic_programming)
+- [Wildcard Character](https://en.wikipedia.org/wiki/Wildcard_character)
+
+---
+
+**Solution Status:** Completed
+
+**Primary Approach:** Dynamic Programming — Space Optimized
+
+**Language:** JavaScript
+
+**Time Complexity:** `O(m × n)`
+
+**Auxiliary Space Complexity:** `O(n)`
+
+**Key Concepts:** Dynamic Programming, String Matching, Wildcards, Rolling DP, Space Optimization
