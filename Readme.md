@@ -9,14 +9,12 @@
     <a href="https://github.com/Jeremiahogingo">
       <img src="https://img.shields.io/badge/GitHub-Jeremiahogingo-black?style=for-the-badge&logo=github" alt="GitHub profile" />
     </a>
-    <a href="https://my-portfolio-eta-six-33.vercel.app/">
+    <a href="https://jeremiah-jerrylion-portfolio.vercel.app/">
       <img src="https://img.shields.io/badge/Portfolio-Live-success?style=for-the-badge&logo=vercel" alt="Portfolio" />
     </a>
   </p>
 
   <p>
-    <img src="https://img.shields.io/github/stars/Jeremiahogingo/LeetCode-Solutions?style=for-the-badge" alt="GitHub stars" />
-    <img src="https://img.shields.io/github/forks/Jeremiahogingo/LeetCode-Solutions?style=for-the-badge" alt="GitHub forks" />
     <img src="https://img.shields.io/github/last-commit/Jeremiahogingo/LeetCode-Solutions?style=for-the-badge" alt="Last commit" />
     <img src="https://img.shields.io/github/repo-size/Jeremiahogingo/LeetCode-Solutions?style=for-the-badge" alt="Repository size" />
     <img src="https://img.shields.io/github/license/Jeremiahogingo/LeetCode-Solutions?style=for-the-badge" alt="License" />
@@ -56,11 +54,11 @@ Solutions focus on clear reasoning, efficient algorithms, readable implementatio
 | Difficulty | Problems |
 |---|---:|
 | 🟢 Easy | 22 |
-| 🟡 Medium | 28 |
+| 🟡 Medium | 30 |
 | 🔴 Hard | 17 |
-| **Total unique problems** | **67** |
-| **Problem-language implementations** | **73** |
-| **Solution source files scanned** | **78** |
+| **Total unique problems** | **69** |
+| **Problem-language implementations** | **75** |
+| **Solution source files scanned** | **80** |
 <!-- AUTO_STATS:END -->
 
 > This dashboard is generated from the repository's problem catalog and solution-file metadata by `scripts/update_readme.py`.
@@ -170,14 +168,16 @@ The updater recursively scans the language folders under each difficulty. Folder
 | 21 | [Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/) | 🟢 Easy | Linked List | Python |
 | 32 | [Longest Valid Parentheses](https://leetcode.com/problems/longest-valid-parentheses/) | 🔴 Hard | Stack, Dynamic Programming | Python |
 | 79 | [Word Search](https://leetcode.com/problems/word-search/) | 🟡 Medium | Backtracking | Java |
-| 181 | [Employees Earning More Than Their Managers](https://leetcode.com/problems/employees-earning-more-than-their-managers/) | 🟢 Easy | — | SQL |
-| 462 | [Minimum Moves To Equal Array Elements Ii Py](https://leetcode.com/problems/minimum-moves-to-equal-array-elements-ii-py/) | 🟡 Medium | — | Python |
+| 178 | [Rank Scores](https://leetcode.com/problems/rank-scores/) | 🟡 Medium | — | SQL |
+| 180 | [Consecutive Numbers](https://leetcode.com/problems/consecutive-numbers/) | 🟡 Medium | — | SQL |
 
 <details>
-<summary>Show all 59 remaining solutions</summary>
+<summary>Show all 61 remaining solutions</summary>
 
 | # | Problem | Difficulty | Topics | Language(s) |
 |---:|---|---|---|---|
+| 181 | [Employees Earning More Than Their Managers](https://leetcode.com/problems/employees-earning-more-than-their-managers/) | 🟢 Easy | — | SQL |
+| 462 | [Minimum Moves To Equal Array Elements Ii Py](https://leetcode.com/problems/minimum-moves-to-equal-array-elements-ii-py/) | 🟡 Medium | — | Python |
 | 584 | [Find Customer Referee](https://leetcode.com/problems/find-customer-referee/) | 🟢 Easy | — | SQL |
 | 586 | [Customer Placing The Largest Number Of Orders](https://leetcode.com/problems/customer-placing-the-largest-number-of-orders/) | 🟢 Easy | — | SQL |
 | 596 | [Classes With At Least 5 Students](https://leetcode.com/problems/classes-with-at-least-5-students/) | 🟢 Easy | — | Python |
@@ -193,50 +193,50 @@ The updater recursively scans the language folders under each difficulty. Folder
 | 1606 | [Find Servers That Handled Most Number Of Requests](https://leetcode.com/problems/find-servers-that-handled-most-number-of-requests/) | 🔴 Hard | — | Python |
 | 2747 | [Count Zero Request Servers](https://leetcode.com/problems/count-zero-request-servers/) | 🟡 Medium | — | Python |
 | 2911 | [Minimum Changes To Make K Semi Palindromes](https://leetcode.com/problems/minimum-changes-to-make-k-semi-palindromes/) | 🔴 Hard | — | JavaScript |
+| 2914 | [Minimum Number Of Changes](https://leetcode.com/problems/minimum-number-of-changes/) | 🟡 Medium | — | JavaScript |
 | 3105 | [Longest Strictly Increasing Or Strictly Decreasing Subarray](https://leetcode.com/problems/longest-strictly-increasing-or-strictly-decreasing-subarray/) | 🟢 Easy | — | JavaScript |
 | 3736 | [Minimum Moves To Equal Array Elements Iii Py](https://leetcode.com/problems/minimum-moves-to-equal-array-elements-iii-py/) | 🟢 Easy | — | Python |
 | 3789 | [Minimum Cost To Acquire Required Items](https://leetcode.com/problems/minimum-cost-to-acquire-required-items/) | 🟡 Medium | — | JavaScript |
-| — | [Binary Tree Inorder Traversal](https://leetcode.com/problems/binary-tree-inorder-traversal/) | 🟢 Easy | — | Go |
-| — | [Combine Two Tables](https://leetcode.com/problems/combine-two-tables/) | 🟢 Easy | — | SQL |
-| — | [Consecutive Numbers](https://leetcode.com/problems/consecutive-numbers/) | 🟡 Medium | — | SQL |
-| — | [Container With Most Water](https://leetcode.com/problems/container-with-most-water/) | 🟡 Medium | — | Java, Python |
-| — | [Convert Sorted Listto Binary Search Tree](https://leetcode.com/problems/convert-sorted-listto-binary-search-tree/) | 🟡 Medium | — | Java |
+| 94 | [Binary Tree Inorder Traversal](https://leetcode.com/problems/binary-tree-inorder-traversal/) | 🟢 Easy | — | Go |
+| 175 | [Combine Two Tables](https://leetcode.com/problems/combine-two-tables/) | 🟢 Easy | — | SQL |
+| 11 | [Container With Most Water](https://leetcode.com/problems/container-with-most-water/) | 🟡 Medium | — | Java, Python |
+| 109 | [Convert Sorted Listto Binary Search Tree](https://leetcode.com/problems/convert-sorted-listto-binary-search-tree/) | 🟡 Medium | — | Java |
 | — | [Game Play Analysis I](https://leetcode.com/problems/game-play-analysis-i/) | 🟢 Easy | — | SQL |
-| — | [Jump Game](https://leetcode.com/problems/jump-game/) | 🟡 Medium | — | Go |
+| 55 | [Jump Game](https://leetcode.com/problems/jump-game/) | 🟡 Medium | — | Go |
 | — | [Last Word](https://leetcode.com/problems/last-word/) | 🟢 Easy | — | Java |
-| — | [Longest Common Prefix](https://leetcode.com/problems/longest-common-prefix/) | 🟢 Easy | — | Python |
+| 14 | [Longest Common Prefix](https://leetcode.com/problems/longest-common-prefix/) | 🟢 Easy | — | Python |
 | — | [Longest Common Suffix Queries](https://leetcode.com/problems/longest-common-suffix-queries/) | 🔴 Hard | — | Python |
-| — | [Longest Palindromic Substring](https://leetcode.com/problems/longest-palindromic-substring/) | 🟡 Medium | — | Python |
-| — | [Longest Valid Parenthesis](https://leetcode.com/problems/longest-valid-parenthesis/) | 🔴 Hard | — | Python |
-| — | [Memoize](https://leetcode.com/problems/memoize/) | 🟡 Medium | — | JavaScript |
+| 5 | [Longest Palindromic Substring](https://leetcode.com/problems/longest-palindromic-substring/) | 🟡 Medium | — | Python |
+| 32 | [Longest Valid Parenthesis](https://leetcode.com/problems/longest-valid-parenthesis/) | 🔴 Hard | — | Python |
+| 2623 | [Memoize](https://leetcode.com/problems/memoize/) | 🟡 Medium | — | JavaScript |
 | — | [Mergelist](https://leetcode.com/problems/mergelist/) | 🟢 Easy | — | Java |
-| — | [Minimum Path Sum](https://leetcode.com/problems/minimum-path-sum/) | 🟡 Medium | — | Python |
-| — | [Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/) | 🔴 Hard | — | Java |
-| — | [N Queens](https://leetcode.com/problems/n-queens/) | 🔴 Hard | — | Python |
-| — | [N Queens Ii](https://leetcode.com/problems/n-queens-ii/) | 🔴 Hard | — | Python |
-| — | [Nth Highest Salary](https://leetcode.com/problems/nth-highest-salary/) | 🟡 Medium | — | SQL |
-| — | [Palindrome Number](https://leetcode.com/problems/palindrome-number/) | 🟢 Easy | — | Python |
-| — | [Permutation Sequence](https://leetcode.com/problems/permutation-sequence/) | 🔴 Hard | — | Java |
-| — | [Permutations](https://leetcode.com/problems/permutations/) | 🟡 Medium | — | Java |
-| — | [Remove Duplicates From Sorted List](https://leetcode.com/problems/remove-duplicates-from-sorted-list/) | 🟢 Easy | — | Java |
-| — | [Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/) | 🟡 Medium | — | Go |
-| — | [Reverse Nodes In K Group](https://leetcode.com/problems/reverse-nodes-in-k-group/) | 🔴 Hard | — | Go |
-| — | [Rotate Image](https://leetcode.com/problems/rotate-image/) | 🟡 Medium | — | Go |
-| — | [Same Tree](https://leetcode.com/problems/same-tree/) | 🟢 Easy | — | JavaScript |
-| — | [Scramble String](https://leetcode.com/problems/scramble-string/) | 🔴 Hard | — | Python |
-| — | [Set Matrix Zeroes](https://leetcode.com/problems/set-matrix-zeroes/) | 🟡 Medium | — | JavaScript |
-| — | [Shortest Path With Most K Consecutive Identical Characters](https://leetcode.com/problems/shortest-path-with-most-k-consecutive-identical-characters/) | 🟡 Medium | — | Go |
-| — | [Soduku Solver](https://leetcode.com/problems/soduku-solver/) | 🔴 Hard | — | JavaScript |
+| 64 | [Minimum Path Sum](https://leetcode.com/problems/minimum-path-sum/) | 🟡 Medium | — | Python |
+| 76 | [Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/) | 🔴 Hard | — | Java |
+| 51 | [N Queens](https://leetcode.com/problems/n-queens/) | 🔴 Hard | — | Python |
+| 52 | [N Queens Ii](https://leetcode.com/problems/n-queens-ii/) | 🔴 Hard | — | Python |
+| 177 | [Nth Highest Salary](https://leetcode.com/problems/nth-highest-salary/) | 🟡 Medium | — | SQL |
+| 9 | [Palindrome Number](https://leetcode.com/problems/palindrome-number/) | 🟢 Easy | — | Python |
+| 60 | [Permutation Sequence](https://leetcode.com/problems/permutation-sequence/) | 🔴 Hard | — | Java |
+| 46 | [Permutations](https://leetcode.com/problems/permutations/) | 🟡 Medium | — | Java |
+| 83 | [Remove Duplicates From Sorted List](https://leetcode.com/problems/remove-duplicates-from-sorted-list/) | 🟢 Easy | — | Java |
+| 92 | [Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/) | 🟡 Medium | — | Go |
+| 25 | [Reverse Nodes In K Group](https://leetcode.com/problems/reverse-nodes-in-k-group/) | 🔴 Hard | — | Go |
+| 48 | [Rotate Image](https://leetcode.com/problems/rotate-image/) | 🟡 Medium | — | Go |
+| 100 | [Same Tree](https://leetcode.com/problems/same-tree/) | 🟢 Easy | — | JavaScript |
+| 87 | [Scramble String](https://leetcode.com/problems/scramble-string/) | 🔴 Hard | — | Python |
+| 73 | [Set Matrix Zeroes](https://leetcode.com/problems/set-matrix-zeroes/) | 🟡 Medium | — | JavaScript |
+| 3970 | [Shortest Path With Most K Consecutive Identical Characters](https://leetcode.com/problems/shortest-path-with-most-k-consecutive-identical-characters/) | 🟡 Medium | — | Go |
+| 37 | [Soduku Solver](https://leetcode.com/problems/soduku-solver/) | 🔴 Hard | — | JavaScript |
 | — | [Soln](https://leetcode.com/problems/soln/) | 🔴 Hard | — | Bash, Java, JavaScript, SQL |
-| — | [Sqrt(X)](https://leetcode.com/problems/sqrt-x/) | 🟢 Easy | — | Java |
-| — | [Subsets Ii](https://leetcode.com/problems/subsets-ii/) | 🟡 Medium | — | Java |
+| 69 | [Sqrt(X)](https://leetcode.com/problems/sqrt-x/) | 🟢 Easy | — | Java |
+| 90 | [Subsets II](https://leetcode.com/problems/subsets-ii/) | 🟡 Medium | — | Java |
 | — | [Swap Nodes In Pairs](https://leetcode.com/problems/swap-nodes-in-pairs/) | 🟡 Medium | — | Go |
-| — | [Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/) | 🔴 Hard | — | Java |
-| — | [Trips&Users](https://leetcode.com/problems/trips-users/) | 🔴 Hard | — | SQL |
-| — | [Unique Paths](https://leetcode.com/problems/unique-paths/) | 🟡 Medium | — | Python |
-| — | [Valid Palindrome](https://leetcode.com/problems/valid-palindrome/) | 🟢 Easy | — | Python |
-| — | [Valid Sudoku](https://leetcode.com/problems/valid-sudoku/) | 🟡 Medium | — | Python |
-| — | [Wild Card Matching](https://leetcode.com/problems/wild-card-matching/) | 🔴 Hard | — | Python |
+| 42 | [Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/) | 🔴 Hard | — | Java |
+| 262 | [Trips&Users](https://leetcode.com/problems/trips-users/) | 🔴 Hard | — | SQL |
+| 62 | [Unique Paths](https://leetcode.com/problems/unique-paths/) | 🟡 Medium | — | Python |
+| 125 | [Valid Palindrome](https://leetcode.com/problems/valid-palindrome/) | 🟢 Easy | — | Python |
+| 36 | [Valid Sudoku](https://leetcode.com/problems/valid-sudoku/) | 🟡 Medium | — | Python |
+| 44 | [Wild Card Matching](https://leetcode.com/problems/wild-card-matching/) | 🔴 Hard | — | Python |
 
 </details>
 <!-- AUTO_PROBLEMS:END -->
@@ -251,9 +251,9 @@ The first 8 solutions are shown by default to keep this README compact. Open the
 | Language | Tracked problem-language pairs |
 |---|---:|
 | Python | 24 |
-| SQL | 16 |
+| SQL | 17 |
 | Java | 14 |
-| JavaScript | 10 |
+| JavaScript | 11 |
 | Go | 8 |
 | Bash | 1 |
 <!-- AUTO_LANGUAGES:END -->
