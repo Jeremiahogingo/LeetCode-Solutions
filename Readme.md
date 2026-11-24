@@ -53,12 +53,12 @@ Solutions focus on clear reasoning, efficient algorithms, readable implementatio
 <!-- AUTO_STATS:START -->
 | Difficulty | Problems |
 |---|---:|
-| 🟢 Easy | 22 |
+| 🟢 Easy | 24 |
 | 🟡 Medium | 31 |
 | 🔴 Hard | 17 |
-| **Total unique problems** | **70** |
-| **Problem-language implementations** | **76** |
-| **Solution source files scanned** | **81** |
+| **Total unique problems** | **72** |
+| **Problem-language implementations** | **78** |
+| **Solution source files scanned** | **83** |
 <!-- AUTO_STATS:END -->
 
 > This dashboard is generated from the repository's problem catalog and solution-file metadata by `scripts/update_readme.py`.
@@ -172,12 +172,13 @@ The updater recursively scans the language folders under each difficulty. Folder
 | 178 | [Rank Scores](https://leetcode.com/problems/rank-scores/) | 🟡 Medium | — | SQL |
 
 <details>
-<summary>Show all 62 remaining solutions</summary>
+<summary>Show all 64 remaining solutions</summary>
 
 | # | Problem | Difficulty | Topics | Language(s) |
 |---:|---|---|---|---|
 | 180 | [Consecutive Numbers](https://leetcode.com/problems/consecutive-numbers/) | 🟡 Medium | — | SQL |
 | 181 | [Employees Earning More Than Their Managers](https://leetcode.com/problems/employees-earning-more-than-their-managers/) | 🟢 Easy | — | SQL |
+| 234 | [Palindrome Linked List](https://leetcode.com/problems/palindrome-linked-list/) | 🟢 Easy | — | Go |
 | 462 | [Minimum Moves To Equal Array Elements Ii Py](https://leetcode.com/problems/minimum-moves-to-equal-array-elements-ii-py/) | 🟡 Medium | — | Python |
 | 584 | [Find Customer Referee](https://leetcode.com/problems/find-customer-referee/) | 🟢 Easy | — | SQL |
 | 586 | [Customer Placing The Largest Number Of Orders](https://leetcode.com/problems/customer-placing-the-largest-number-of-orders/) | 🟢 Easy | — | SQL |
@@ -197,6 +198,7 @@ The updater recursively scans the language folders under each difficulty. Folder
 | 2911 | [Minimum Changes To Make K Semi Palindromes](https://leetcode.com/problems/minimum-changes-to-make-k-semi-palindromes/) | 🔴 Hard | — | JavaScript |
 | 2914 | [Minimum Number Of Changes](https://leetcode.com/problems/minimum-number-of-changes/) | 🟡 Medium | — | JavaScript |
 | 3105 | [Longest Strictly Increasing Or Strictly Decreasing Subarray](https://leetcode.com/problems/longest-strictly-increasing-or-strictly-decreasing-subarray/) | 🟢 Easy | — | JavaScript |
+| 3411 | [Maximum Subarray With Equal Products](https://leetcode.com/problems/maximum-subarray-with-equal-products/) | 🟢 Easy | — | JavaScript |
 | 3736 | [Minimum Moves To Equal Array Elements Iii Py](https://leetcode.com/problems/minimum-moves-to-equal-array-elements-iii-py/) | 🟢 Easy | — | Python |
 | 3789 | [Minimum Cost To Acquire Required Items](https://leetcode.com/problems/minimum-cost-to-acquire-required-items/) | 🟡 Medium | — | JavaScript |
 | — | [Binary Tree Inorder Traversal](https://leetcode.com/problems/binary-tree-inorder-traversal/) | 🟢 Easy | — | Go |
@@ -254,8 +256,8 @@ The first 8 solutions are shown by default to keep this README compact. Open the
 | Python | 23 |
 | SQL | 17 |
 | Java | 14 |
-| JavaScript | 13 |
-| Go | 8 |
+| JavaScript | 14 |
+| Go | 9 |
 | Bash | 1 |
 <!-- AUTO_LANGUAGES:END -->
 
